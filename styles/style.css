@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+}
+
+
+#header {
+  background-color: #00867d;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+}
+
+
+  nav {
+  padding: 20px;
+}
+
+nav > a {
+  background-color: #00867d;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  }
+
+nav > a:hover {
+  color: white;
+  border-bottom: 5px solid #82e9de;
+}
+
+nav > a:active {
+  background-color: gray;
+  color: white;
+}
+
+#image-blur {
+ background-image: url(../images/Cinque-Terre-Wallpaper.jpg);
+ background-attachment: fixed;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ width: 100%;
+ height: 500px;
+}
+
+#image-blur2 {
+background-image: url(../images/fog_mist_forest.jpg);
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+height: 500px;
+}
+
+#image-blur3 {
+  background-image: url(../images/mountain_fog.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+}
+
+#layer {
+  background-color: white;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div h2 {
+ margin: 40px auto;
+ color: black;
+ font-size: 48px;
+}
+
+.section {
+  padding: 40px;
+  line-height: 1.6em;
+  font-size: 20px;
+}
+
+#footer {
+  background-color: #00867d;
+  display: flex;
+  justify-content: flex-end;
+}
