@@ -16,9 +16,14 @@ body {
   z-index: 1000;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-#logo {
+img {
+  width: 40px;
+  border-radius: 100%;
+  margin-left: 20px;
+  margin-top: 4px;
 }
 
 
