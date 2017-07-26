@@ -106,6 +106,9 @@ div h2 {
   justify-content: flex-end;
 }
 
+
+/*This layout is for mobile viewing*/
+
 @media screen and (max-width: 600px) {
 
   #header {
@@ -115,22 +118,31 @@ div h2 {
 
   img {
     margin-left: 0px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
 nav {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  padding:  5px 0px;
 }
 
-nav a {
-  padding-left: 35px;
-  padding-right: 35px;
+ nav a {
+  /*padding-left: 35px;
+  padding-right: 35px;*/
+  flex: 1 1 10%;
+  display: flex;
+  justify-content: center;
 }
 
 nav a:nth-child(2) {
   border-left: 1px solid #82e9de;
   border-right: 1px solid #82e9de;
+}
+
+#footer {
+  /*display: flex;*/
+  justify-content: center;
 }
 }
