@@ -174,15 +174,18 @@ nav a:nth-child(2) {
 
 #image-blur {
   background-image: url(../images/Cinque-Terre-mini.jpg);
+  height: 300px;
 }
 
 #image-blur2 {
   background-image:
   url(../images/fog_mist_forest_mini.jpg);
+  height: 300px;
 }
 
 #image-blur3 {
   background-image: url(../images/mountain_eagle_fog_mini.jpg);
+  height: 300px;
 }
 
 #footer {
