@@ -174,8 +174,8 @@ nav a:nth-child(2) {
 
 #image-blur {
   background-image: url(../images/Cinque-Terre-mini.jpg);
-  height: 300px;
-  padding-top: 100px;
+  height: 500px;
+  /*padding-top: 100px;*/
 }
 
 #image-blur2 {
