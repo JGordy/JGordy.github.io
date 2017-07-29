@@ -12,4 +12,8 @@ if (hourNow >= 18) {
   greeting = "Welcome!";
 }
 
-document.getElementById('layer1').innerHTML = '<h1>' + greeting + '</h1>'
+document.getElementById('greet').textContent = greeting;
+
+// let div = document.querySelector('layer1');
+// let h1 = document.createElement('h1';)
+// h1.textContent = greeting;
