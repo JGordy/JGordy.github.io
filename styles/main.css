@@ -44,7 +44,7 @@ body {
 
 .wrapper {
   background-image: url(../images/StockSnap_DWLWL9USBG.jpg);
-  height: 380px;
+  height: 353px;
   display: flex;
   padding: 50px 150px;
   /* for parallax scroll*/
@@ -83,6 +83,7 @@ span {
 .story p {
   border-left: 2px solid lightgray;
   padding-left: 15px;
+  line-height: 2em;
 }
 
  .story h1, .basics h1 {
