@@ -1,3 +1,6 @@
+
+// Greeting for main header
+
 let today = new Date();
 let hourNow = today.getHours();
 let greeting;
@@ -14,6 +17,37 @@ if (hourNow >= 18) {
 
 document.getElementById('greet').textContent = greeting;
 
-// let div = document.querySelector('layer1');
-// let h1 = document.createElement('h1';)
-// h1.textContent = greeting;
+
+// For the menu toggle
+
+function myFunction(x) {
+    x.classList.toggle("change");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var headerElement = document.getElementById("container");
+//
+// // Adding a "click" event listener to "header"
+// headerElement.addEventListener("click", ourCallBack);
+//
+// // The "ourCallBack()" function is called whenever our declared event listener is triggered.
+// function ourCallBack() {
+//     if( headerElement.style.color === "red" ){
+//         headerElement.style.color = "blue";
+//     }else{
+//         headerElement.style.color = "red";
+//     };

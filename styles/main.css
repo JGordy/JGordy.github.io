@@ -1,0 +1,176 @@
+* {
+  margin: 0px;
+  padding-left: 0px;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+  color: lightgray;
+}
+
+.header{
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  position: relative;
+  padding: 8px 8px 32px 8px;
+  background: black;
+}
+
+.header h1 {
+  color: lightgray;
+  font-size: 42px;
+  padding: 30px 0px;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: .5em;
+  font-weight: lighter;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav a {
+  margin: 0px 15px;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  border-bottom: 5px solid deepskyblue;
+  padding-bottom: 20px;
+  margin-bottom: -25px;
+}
+
+.wrapper {
+  background-image: url(../images/StockSnap_DWLWL9USBG.jpg);
+  height: 380px;
+  display: flex;
+  padding: 50px 150px;
+  /* for parallax scroll*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+span {
+  /*color: #82D3E0;*/
+  color: deepskyblue;
+  margin-right: 5px;
+}
+
+.basics {
+  padding: 20px;
+  width: 200px;
+}
+
+.list {
+
+}
+
+.list li {
+  list-style: none;
+  margin: 10px;
+  display: flex;
+}
+
+.story {
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.story p {
+  border-left: 2px solid lightgray;
+  padding-left: 15px;
+}
+
+ .story h1, .basics h1 {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  font-family: "Roboto Slab", serif;
+  color: lightgray;
+  text-shadow: 1px 1px black;
+}
+
+a {
+  color: lightgray;
+}
+
+#icon {
+  margin-left: 25px;
+  order: -1;
+}
+
+img {
+  border: 2px solid lightgray;
+border-radius: 15%;
+width: 150px;
+margin-top: 100px;
+}
+
+/****** Tablet Styling ******/
+
+@media (max-width: 1000px) {
+
+
+.wrapper {
+flex-wrap: wrap;
+height: 100%;
+}
+
+.basics {
+  order: 0;
+  flex: 1 1 30%;
+}
+
+#icon {
+  order: -5;
+  flex: 1 1 30%;
+  margin-top: - 30px;
+}
+
+.story {
+  order: 5;
+  border-top: 2px solid lightgray;
+}
+
+.story p {
+  border-left: none;
+}
+}
+
+/******** Mobile View ********/
+
+@media (max-width: 500px) {
+
+
+.header h1 {
+  font-size: 32px;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.basics, .story, .icon {
+  width: 80%;
+}
+
+.basics h1, .story h1  {
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+.basics ul {
+  margin-left: 100px;
+}
+
+img {
+  margin-top: 20px;
+}
+
+}
