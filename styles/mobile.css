@@ -73,18 +73,18 @@ nav a {
 /* End Menu toggle styling */
 
 #image-blur {
-  background-image: url(../images/Cinque-Terre-mini.jpg);
+  background-image: url(../images/itunes_mini.jpg);
   height: 500px;
 }
 
 #image-blur2 {
   background-image:
-  url(../images/fog_mist_forest_mini.jpg);
+  url(../images/calculator_mini.jpg);
   height: 300px;
 }
 
 #image-blur3 {
-  background-image: url(../images/mountain_eagle_fog_mini.jpg);
+  background-image: url(../images/bent_creek_mini.jpg);
   height: 300px;
 }
 
