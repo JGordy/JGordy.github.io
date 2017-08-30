@@ -8,6 +8,10 @@
     justify-content: space-between;
   }
 
+.header h1 {
+  font-size: 32px;
+}
+
 img {
   margin-left: 20px;
   margin-top: 10px;
