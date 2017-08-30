@@ -37,7 +37,7 @@ body {
 }
 
 .nav a:hover {
-  border-bottom: 5px solid deepskyblue;
+  border-bottom: 5px solid cadetblue;
   padding-bottom: 20px;
   margin-bottom: -25px;
 }
@@ -55,8 +55,8 @@ body {
 }
 
 span {
-  /*color: #82D3E0;*/
-  color: deepskyblue;
+  color: #82D3E0;
+  /*color: deepskyblue;*/
   font-weight: bold;
   margin-right: 5px;
 }

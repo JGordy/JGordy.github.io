@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: deepskyblue;
+  background-color: cadetblue;
   color: aliceblue;
   text-shadow: 2px 2px 2px gray;
   font-family: "Roboto", sans-serif;
@@ -41,7 +41,7 @@ body {
 }
 
 .nav a:hover {
-  border-bottom: 5px solid deepskyblue;
+  border-bottom: 5px solid cadetblue;
   padding-bottom: 20px;
   margin-bottom: -25px;
 }
@@ -195,7 +195,7 @@ height: 500px;
 }
 
 #linkedin:hover {
-  border-top: 5px solid deepskyblue;
+  border-top: 5px solid cadetblue;
   padding-top: 13px;
   margin-top: -18px;
 }
@@ -205,7 +205,7 @@ height: 500px;
 }
 
 #github:hover {
-  border-top: 5px solid deepskyblue;
+  border-top: 5px solid cadetblue;
   padding-top: 13px;
   margin-top: -18px;
 }
@@ -216,7 +216,7 @@ height: 55px;
 }
 
 #mailIcon:hover {
-border-top: 5px solid deepskyblue;
+border-top: 5px solid cadetblue;
 padding-top: 3px;
 margin-top: -8px;
 }
