@@ -57,6 +57,7 @@ body {
 span {
   /*color: #82D3E0;*/
   color: deepskyblue;
+  font-weight: bold;
   margin-right: 5px;
 }
 
