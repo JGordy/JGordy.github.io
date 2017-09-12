@@ -31,6 +31,7 @@ body {
   justify-content: center;
 }
 
+
 .nav a {
   margin: 0px 15px;
   text-decoration: none;
@@ -73,13 +74,13 @@ span {
 }
 
 .story {
-  margin-left: 20px;
+  margin-left: 40px;
   padding: 20px;
 }
 
 .story p {
   border-left: 2px solid lightgray;
-  padding-left: 15px;
+  padding-left: 35px;
   line-height: 2em;
 }
 
@@ -96,7 +97,7 @@ a {
 }
 
 #icon {
-  margin-left: 25px;
+  margin-right: 25px;
   order: -1;
 }
 
@@ -104,7 +105,7 @@ img {
   border: 2px solid lightgray;
 border-radius: 15%;
 width: 150px;
-margin-top: 100px;
+margin-top: 115px;
 }
 
 /****** Tablet Styling ******/
@@ -142,19 +143,28 @@ height: 100%;
 
 @media (max-width: 500px) {
 
-  nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    padding:  5px 0px;
-    align-items: center;
-  }
+nav {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  padding:  5px 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+}
 
-  nav a {
-    flex: 1 1 10%;
-    display: flex;
-    justify-content: center;
-  }
+nav a {
+  flex: 1 1 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
 
 
 .header h1 {

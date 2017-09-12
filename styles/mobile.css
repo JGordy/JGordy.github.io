@@ -19,17 +19,26 @@ img {
 }
 
 nav {
-  width: 100%;
+  align-items: center;
   display: flex;
   justify-content: space-around;
   padding:  5px 0px;
-  align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  width: 100%;
 }
 
 nav a {
   flex: 1 1 10%;
   display: flex;
   justify-content: center;
+}
+
+.nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
 
 #header nav a {
@@ -99,6 +108,10 @@ nav a {
 
 #footer img {
   height: 30px;
+}
+
+#email {
+  height:
 }
 
 #footer a {

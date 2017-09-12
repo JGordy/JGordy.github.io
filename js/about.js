@@ -38,8 +38,6 @@ let header = document.querySelector(".header");
 
 let list = document.querySelector(".list");
 
-let icon = document.getElementById("icon");
-
 // vCard Function
 
 function vCardFunction () {
@@ -74,6 +72,7 @@ function vCardFunction () {
 
   let image = document.createElement("img");
   image.setAttribute("src", data.avatar_url);
+  // let icon = document.getElementById("icon");
   icon.appendChild( image );
 }
 
@@ -85,7 +84,6 @@ vCardFunction();
 
 function reqListener () {
    let info = JSON.parse(this.responseText);
-console.log(data);
 }
 
 let req = new XMLHttpRequest();
