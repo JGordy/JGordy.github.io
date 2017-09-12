@@ -6,7 +6,7 @@
 body {
   background-color: cadetblue;
   color: aliceblue;
-  text-shadow: 2px 2px 2px gray;
+  /*text-shadow: 2px 2px 2px gray;*/
   font-family: "Roboto", sans-serif;
 }
 
@@ -115,8 +115,7 @@ height: 500px;
 }
 
 #layer1 {
-  background-color: white;
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
@@ -126,8 +125,7 @@ height: 500px;
 }
 
 #layer2 {
-  background-color: white;
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
@@ -136,8 +134,7 @@ height: 500px;
 }
 
 #layer3 {
-  background-color: white;
-  opacity: 0.5;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
@@ -164,7 +161,10 @@ height: 500px;
 }
 
 #layer1 h1 a:hover, #layer2 h1 a:hover, #layer3 h1 a:hover {
-  color: cadetblue;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
 }
 
 .section {
