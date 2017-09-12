@@ -5,8 +5,9 @@
 
 body {
   background-color: #fff;
-  font-family: "Roboto", sans-serif;
   color: lightgray;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
 }
 
 .header{
@@ -45,7 +46,8 @@ body {
 
 .wrapper {
   background-image: url(../images/StockSnap_DWLWL9USBG.jpg);
-  height: 353px;
+  min-height: 390px;
+  /*height: 442px;*/
   display: flex;
   padding: 50px 150px;
   /* for parallax scroll*/
@@ -103,9 +105,9 @@ a {
 
 img {
   border: 2px solid lightgray;
-border-radius: 15%;
-width: 150px;
-margin-top: 115px;
+  border-radius: 15%;
+  width: 150px;
+  margin-top: 115px;
 }
 
 /****** Tablet Styling ******/
