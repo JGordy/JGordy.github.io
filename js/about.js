@@ -42,11 +42,7 @@ let list = document.querySelector(".list");
 
 function vCardFunction () {
     header.innerHTML = `<h1>${data.name}</h1>
-    <nav class="nav">
-      <a href="./index.html">Home</a>
-      <a href="./index.html">About</a>
-      <a href="./projects.html">Projects</a>
-    </nav>  `;
+     `;
 
     list.innerHTML = `<li>
                         <span>Name:</span> ${data.name}

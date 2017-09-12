@@ -14,7 +14,7 @@ body {
   text-align: center;
   font-family: "Roboto Slab", serif;
   position: relative;
-  padding: 8px 8px 32px 8px;
+  padding: 8px;
   background: black;
 }
 
@@ -28,8 +28,13 @@ body {
 }
 
 .nav {
+  background-color: black;
   display: flex;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
   justify-content: center;
+  padding: 15px 0px;
 }
 
 
@@ -40,8 +45,8 @@ body {
 
 .nav a:hover {
   border-bottom: 5px solid cadetblue;
-  padding-bottom: 20px;
-  margin-bottom: -25px;
+  padding-bottom: 10px;
+  margin-bottom: -15px;
 }
 
 .wrapper {
