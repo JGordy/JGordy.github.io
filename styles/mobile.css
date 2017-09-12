@@ -31,6 +31,7 @@ nav {
 
 nav a {
   flex: 1 1 10%;
+  font-size: 20px;
   display: flex;
   justify-content: center;
 }
