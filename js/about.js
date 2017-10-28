@@ -57,7 +57,7 @@ function vCardFunction () {
                         <span>Company:</span>${data.company}
                       </li>
                       <li>
-                        <span>LinkedIn:</span><a href="https://www.linkedin.com/in/joseph-gordy-64070a28/">LinkedIn.com</a>
+                        <span>LinkedIn:</span><a href="https://www.linkedin.com/in/joseph-gordy">LinkedIn.com</a>
                       </li>
                       <li>
                         <span>Website:</span><a href=https://${data.blog}>${data.blog}</a>
