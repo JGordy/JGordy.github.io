@@ -86,7 +86,12 @@ body {
   color: #37474f;
   font-size: 2.5rem;
   margin: 0rem 1rem;
+  transition: text-shadow 0.3s;
+}
+
+.social-icons i:hover {
   text-shadow: 8px 11px 4px rgba(100, 100, 100, 0.3);
+  transition: text-shadow 0.3s;
 }
 
 #about-me-button {
@@ -96,6 +101,12 @@ body {
   justify-content: center;
   margin-top: 4rem;
   text-align: center;
+  transition: text-shadow 0.3s;
+}
+
+#about-me-button:hover {
+  text-shadow: 8px 11px 4px rgba(100, 199, 200, 0.6);
+  transition: text-shadow 0.3s;
 }
 
 #about-me-button a {
@@ -191,8 +202,10 @@ body {
 }
 
 .about h1 {
-  color: rgba(255,255,255, 0.8);
+  color: rgba(255,255,255, 1.0);
   font-family: "Roboto Slab", serif;
+  font-size: 3rem;
+  font-weight: lighter;
   text-align: center;
 }
 
@@ -231,6 +244,24 @@ img {
   padding-left: 35px;
 }
 
+.skills {
+  border-top: 2px solid #62727b;
+  border-bottom: 2px solid #62727b;
+  color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0rem;
+}
+
+#skills_header {
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.skills span {
+  margin: 0rem 0.5rem;
+}
+
 .basics {
   padding: 20px 0px;
   flex-basis: 100%;
@@ -243,7 +274,7 @@ img {
 }*/
 
 .list {
-  border-top: 2px solid #62727b;
+  /*border-top: 2px solid #62727b;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
