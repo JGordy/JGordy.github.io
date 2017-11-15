@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1">
 
+    <script src="https://use.fontawesome.com/fe9d6acd6c.js"></script>
+
     <title>Joe Gordy</title>
 
     <link rel="stylesheet" href="./styles/main.css">
@@ -12,38 +14,73 @@
     <link href="../favicons.ico/android-icon-192x192.png" rel="icon" type="image/png" sizes="192x192">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
 
   <body>
-
-    <div class="header">
-
-    </div>
+    <div id="top"></div>
 
     <nav class="nav">
-      <a href="./index.html">Home</a>
-      <a href="./index.html">About</a>
-      <a href="./projects.html">Projects</a>
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
     </nav>
 
-    <div class="wrapper">
-
-      <div class="basics">
-        <h1>The Basics</h1>
-        <ul class="list">
-        </ul>
+    <div class="main" id="main">
+      <div class="header">
+        <h1>Hi, I'm Joe</h1>
+        <h3>Software Engineer | Web Developer</h3>
       </div>
 
-      <div class="story">
-        <h1>The Story</h1>
-        <p>As an Atlanta newbie, nature-appreciator and tech enthusiast, I am excited to complete training at The Iron Yard and blend 16 years of retail management experience with a new career in web and software development. I love working with a good team to create intuitive solutions for customers.</p>
+      <div class="social-icons">
+        <a href="https://github.com/jgordy"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/joseph-gordy/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
       </div>
 
-      <div id="icon">
+      <div id="about-me-button">
+        <a href="#about">
+          <h4>About me</h4>
+          <i class="material-icons">expand_more</i>
+        </a>
       </div>
+    </div>
+
+    <div class="about" id="about">
+      <div class="wrapper" id="wrapper">
+        <h1>About</h1>
+        <div id="content_container">
+
+          <div id="icon">
+          </div>
+
+          <div class="story">
+            <p>As an Atlanta newbie, nature-appreciator and tech enthusiast, I am excited to complete training at The Iron Yard and blend 16 years of retail management experience with a new career in web and software development. I love working with a good team to create intuitive solutions for customers.</p>
+          </div>
+
+          <div class="basics">
+            <!-- <h1>The Basics</h1> -->
+            <ul class="list">
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="projects" id="projects">
 
     </div>
 
+    <div class="section4" id="section4">
+
+    </div>
+
+    <div class="footer" id="footer">
+
+    </div>
+
+    <script src="./js/about.js"></script>
   </body>
-  <script src="./js/about.js"></script>
 </html>

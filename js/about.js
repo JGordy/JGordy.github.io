@@ -18,9 +18,9 @@ let data = {
   "site_admin": false,
   "name": "Joseph Gordy",
   "company": "The Iron Yard",
-  "blog": "jgordy.github.io",
+  "blog": "josephgordy.com",
   "location": "Atlanta, GA",
-  "email": "jgordy2424@gmail.com",
+  "email": "joe.a.gordy@gmail.com",
   "hireable": true,
   "bio": "I've recently decided to make a change in careers at 33. For the past 15 years i've been in the retail industry, and just enrolled in a development bootcamp! ",
   "public_repos": 20,
@@ -31,38 +31,39 @@ let data = {
   "updated_at": "2017-08-07T17:54:38Z"
 }
 
+// console.log('document: ', document.styleSheets[0]);
 
 //  select the parent elements
-
 let header = document.querySelector(".header");
-
 let list = document.querySelector(".list");
+let wrapper = document.querySelector('#wrapper');
+let main = document.querySelector('#main');
 
 // vCard Function
-
 function vCardFunction () {
-    header.innerHTML = `<h1>${data.name}</h1>
-     `;
+    // header.innerHTML = `<h1>Hi, I'm ${data.name}</h1>
+    //  `;
 
     list.innerHTML = `<li>
-                        <span>Name:</span> ${data.name}
+                        <span><i class="material-icons">person_pin</i></i></span> ${data.name}
                       </li>
                       <li>
-                        <span>Github URL:</span><a href=${data.html_url}>Jgordy</a>
+                        <span><i class="fa fa-github" aria-hidden="true"></i></span><a href=${data.html_url}>github.com/Jgordy</a>
                       </li>
                       <li>
-                        <span>Email:</span><a>${data.email}</a>
+                        <span><i class="material-icons">email</i></span><a href="mailTo:${data.email}">${data.email}</a>
                       </li>
                       <li>
-                        <span>Company:</span>${data.company}
+                        <span><i class="material-icons">business</i></span>${data.company}
                       </li>
                       <li>
-                        <span>LinkedIn:</span><a href="https://www.linkedin.com/in/joseph-gordy">LinkedIn.com</a>
+                        <span><i class="fa fa-linkedin" aria-hidden="true"></i></span><a href="https://www.linkedin.com/in/joseph-gordy">LinkedIn.com/joseph-gordy</a>
                       </li>
                       <li>
-                        <span>Website:</span><a href=https://${data.blog}>${data.blog}</a>
+                        <span><i class="fa fa-globe" aria-hidden="true"></i></span><a href=https://${data.blog}>${data.blog}</a>
                       </li>
                       <li>
+                        <span><i class="fa fa-wordpress" aria-hidden="true"></i></span>
                         <a href="https://josephgordy.wordpress.com">josephgordy.wordpress.com</a>
                       </li>`;
 
@@ -71,18 +72,70 @@ function vCardFunction () {
   // let icon = document.getElementById("icon");
   icon.appendChild( image );
 }
-
 vCardFunction();
 
 
+$('a').click(function(){
+  $('html, body').animate({
+    scrollTop: $( $(this).attr('href') ).offset().top
+  }, 500);
+  return false;
+});
 
-// Github api request
+//adding the floating elements in the background
+for (var i = 0; i < 125; i++) {
+  let dot = document.createElement('div');
+  let line = document.createElement('div');
+  let cross = document.createElement('div');
 
-function reqListener () {
-   let info = JSON.parse(this.responseText);
+  dot.setAttribute('class', 'dot');
+  main.appendChild(dot);
+  if (dot.className === 'dot') {
+    dot.style.top === Math.random() * 100 + "%";
+    dot.style.left === Math.random() * 100 + "%";
+    dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
+    dot.style.transform = `rotate(${Math.random() * 180}deg)`;
+  }
+
+  setTimeout(function() {
+    dot.setAttribute('class', 'move');
+    if (dot.className === 'move') {
+      dot.style.top = Math.random() * 100 + "%";
+      dot.style.left = Math.random() * 100 + "%";
+      dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
+    }
+  }, 200);
+
+
+  line.setAttribute('class', 'line');
+  line.style.transform = "rotate(" + Math.random() * 180 + "deg)";
+  line.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCW`
+  dot.appendChild(line);
+
+  cross.setAttribute('class', 'cross');
+  cross.style.transform = "rotate(" + Math.random() * 180 + "deg)";
+  cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`
+  dot.appendChild(cross);
 }
 
-let req = new XMLHttpRequest();
-req.open("GET", "https://api.github.com/users/jgordy");
-req.addEventListener("load", reqListener);
-req.send();
+// let ss = document.styleSheets;
+// console.log("CSS Sheets: " ss);
+
+// Github api request
+// function reqListener () {
+//    let info = JSON.parse(this.responseText);
+//    console.log('Github api data: ', info);
+// }
+//
+// let req = new XMLHttpRequest();
+// req.open("GET", "https://api.github.com/users/jgordy");
+// req.addEventListener("load", reqListener);
+// req.send();
+
+fetch('https://api.github.com/users/jgordy/repos?sort=created')
+    .then(results => {
+      return results.json();
+    }).then(data => {
+      // this.setState({repos: data});
+      console.log(data);
+    })
