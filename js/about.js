@@ -47,10 +47,10 @@ function vCardFunction () {
     //  `;
 
     list.innerHTML = `<li>
-                        <span><i class="material-icons">person_pin</i></i></span> ${data.name}
+                        <span><i class="material-icons">person_pin</i></i></span> ${data.location}
                       </li>
                       <li>
-                        <span><i class="material-icons">business</i></span>${data.company}
+                        <span><i class="material-icons">school</i></span>${data.company}
                       </li>
                       <li>
                         <span><i class="fa fa-github" aria-hidden="true"></i></span><a href=${data.html_url}>github.com/Jgordy</a>
@@ -80,7 +80,7 @@ vCardFunction();
 $('a').click(function(){
   $('html, body').animate({
     scrollTop: $( $(this).attr('href') ).offset().top
-  }, 500);
+  }, 750);
   return false;
 });
 
@@ -124,30 +124,54 @@ fetch('https://api.github.com/users/jgordy/repos?sort=created')
     .then(results => {
       return results.json();
     }).then(data => {
-      console.log(data[1]);
       for (var i = 0; i < data.length; i++) {
 
         let eachRepo = document.createElement('div');
         eachRepo.setAttribute('class', 'eachRepo');
         repositories.appendChild(eachRepo);
 
+        let repo_container = document.createElement('div');
+        repo_container.setAttribute('class', 'repo_container');
+        eachRepo.appendChild(repo_container);
+
+        let link_container = document.createElement('div');
+        link_container.setAttribute('class', 'link_container');
+        eachRepo.appendChild(link_container);
+
+        if (data[i].homepage != null) {
+
+          let site = document.createElement('a');
+          site.setAttribute('href', `${data[i].homepage}`);
+          site.setAttribute('class', 'github');
+          link_container.appendChild(site);
+
+          let ghIcon = document.createElement('div');
+          ghIcon.setAttribute('class', 'ghIcon');
+          ghIcon.innerHTML = `<i class="fa fa-globe" aria-hidden="true"></i>`;
+          site.appendChild(ghIcon);
+        }
+
         let link = document.createElement('a');
         link.setAttribute('href', `${data[i].html_url}`);
-        eachRepo.appendChild(link);
+        link_container.appendChild(link);
 
+        let title = document.createElement('h4');
+        title.textContent = `${data[i].name}`;
+        repo_container.appendChild(title);
 
-        let title = document.createElement('h3');
-        title.textContent = `${data[i].name}`
-        link.appendChild(title);
+        let language = document.createElement('h5');
+        language.setAttribute('class', 'language');
+        language.textContent = `${data[i].language}`;
+        repo_container.appendChild(language);
+
+        let codeIcon = document.createElement('div');
+        codeIcon.setAttribute('class', 'codeIcon');
+        codeIcon.innerHTML = `<i class="material-icons">code</i>`;
+        link.appendChild(codeIcon);
 
       }// end of for loop
 
     }); // end of the repo fetch
-
-
-
-
-
 
 // let ss = document.styleSheets;
 // console.log("CSS Sheets: " ss);
