@@ -39,6 +39,8 @@ let list = document.querySelector(".list");
 let wrapper = document.querySelector('#wrapper');
 let main = document.querySelector('#main');
 let contacts = document.querySelector('.contact-list');
+let repositories = document.querySelector('.repositories');
+
 // vCard Function
 function vCardFunction () {
     // header.innerHTML = `<h1>Hi, I'm ${data.name}</h1>
@@ -122,12 +124,23 @@ fetch('https://api.github.com/users/jgordy/repos?sort=created')
     .then(results => {
       return results.json();
     }).then(data => {
-      let repositories = document.querySelector('repositories');
-
+      console.log(data[1]);
       for (var i = 0; i < data.length; i++) {
+
         let eachRepo = document.createElement('div');
         eachRepo.setAttribute('class', 'eachRepo');
-      }
+        repositories.appendChild(eachRepo);
+
+        let link = document.createElement('a');
+        link.setAttribute('href', `${data[i].html_url}`);
+        eachRepo.appendChild(link);
+
+
+        let title = document.createElement('h3');
+        title.textContent = `${data[i].name}`
+        link.appendChild(title);
+
+      }// end of for loop
 
     }); // end of the repo fetch
 
