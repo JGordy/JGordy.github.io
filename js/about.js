@@ -38,7 +38,7 @@ let header = document.querySelector(".header");
 let list = document.querySelector(".list");
 let wrapper = document.querySelector('#wrapper');
 let main = document.querySelector('#main');
-
+let contacts = document.querySelector('.contact-list');
 // vCard Function
 function vCardFunction () {
     // header.innerHTML = `<h1>Hi, I'm ${data.name}</h1>
@@ -48,24 +48,24 @@ function vCardFunction () {
                         <span><i class="material-icons">person_pin</i></i></span> ${data.name}
                       </li>
                       <li>
-                        <span><i class="fa fa-github" aria-hidden="true"></i></span><a href=${data.html_url}>github.com/Jgordy</a>
-                      </li>
-                      <li>
-                        <span><i class="material-icons">email</i></span><a href="mailTo:${data.email}">${data.email}</a>
-                      </li>
-                      <li>
                         <span><i class="material-icons">business</i></span>${data.company}
                       </li>
                       <li>
-                        <span><i class="fa fa-linkedin" aria-hidden="true"></i></span><a href="https://www.linkedin.com/in/joseph-gordy">LinkedIn.com/joseph-gordy</a>
+                        <span><i class="fa fa-github" aria-hidden="true"></i></span><a href=${data.html_url}>github.com/Jgordy</a>
                       </li>
                       <li>
                         <span><i class="fa fa-globe" aria-hidden="true"></i></span><a href=https://${data.blog}>${data.blog}</a>
-                      </li>
-                      <li>
-                        <span><i class="fa fa-wordpress" aria-hidden="true"></i></span>
-                        <a href="https://josephgordy.wordpress.com">josephgordy.wordpress.com</a>
                       </li>`;
+
+    contacts.innerHTML = `<li>
+      <span><i class="material-icons">email</i></span><a href="mailTo:${data.email}">${data.email}</a>
+    </li>
+    <li>
+      <span><i class="fa fa-linkedin" aria-hidden="true"></i></span><a href="https://www.linkedin.com/in/joseph-gordy">LinkedIn.com/joseph-gordy</a>
+    </li>
+    <li>
+      <span><i class="material-icons">phone_android</i>1•334•718•6808</span>
+    </li>`
 
   let image = document.createElement("img");
   image.setAttribute("src", data.avatar_url);
@@ -118,6 +118,24 @@ for (var i = 0; i < 125; i++) {
   dot.appendChild(cross);
 }
 
+fetch('https://api.github.com/users/jgordy/repos?sort=created')
+    .then(results => {
+      return results.json();
+    }).then(data => {
+      let repositories = document.querySelector('repositories');
+
+      for (var i = 0; i < data.length; i++) {
+        let eachRepo = document.createElement('div');
+        eachRepo.setAttribute('class', 'eachRepo');
+      }
+
+    }); // end of the repo fetch
+
+
+
+
+
+
 // let ss = document.styleSheets;
 // console.log("CSS Sheets: " ss);
 
@@ -131,11 +149,3 @@ for (var i = 0; i < 125; i++) {
 // req.open("GET", "https://api.github.com/users/jgordy");
 // req.addEventListener("load", reqListener);
 // req.send();
-
-fetch('https://api.github.com/users/jgordy/repos?sort=created')
-    .then(results => {
-      return results.json();
-    }).then(data => {
-      // this.setState({repos: data});
-      console.log(data);
-    })
