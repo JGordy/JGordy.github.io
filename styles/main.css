@@ -320,7 +320,7 @@ img {
 
 .repos {
   background-color: rgba(100, 199, 200, 0.9);
-  min-height: 400px;
+  min-height: 300px;
   padding: 3rem 0rem;
   width: 100%;
 }
@@ -400,6 +400,46 @@ img {
 .footer {
   background-color: #102027;
   min-height: 400px;
+}
+
+.contact-list {
+  align-items: center;
+  color: rgba(255,255,255, 0.8);
+  display: flex;
+  height: 12rem;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0rem auto;
+  padding-top: 3rem;
+  width: 90%;
+}
+
+.contact-list li {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.contact-list h4 {
+  color: rgba(100, 199, 200, 1.0);
+  text-transform: uppercase;
+}
+
+.contact-list i {
+  font-size: 48px;
+}
+
+.contact-list a{
+  color: rgba(255,255,255, 0.5);
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  color: rgba(255,255,255, 1.0);
 }
 
 /****** Tablet Styling ******/

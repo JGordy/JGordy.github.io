@@ -60,13 +60,19 @@ function vCardFunction () {
                       </li>`;
 
     contacts.innerHTML = `<li>
-      <span><i class="material-icons">email</i></span><a href="mailTo:${data.email}">${data.email}</a>
+      <span><i class="material-icons">email</i></span>
+      <h4>Email me at</h4>
+      <a href="mailTo:${data.email}">${data.email}</a>
     </li>
     <li>
-      <span><i class="fa fa-linkedin" aria-hidden="true"></i></span><a href="https://www.linkedin.com/in/joseph-gordy">LinkedIn.com/joseph-gordy</a>
+      <span><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+      <h4>Message me on LinkedIn</h4>
+      <a href="https://www.linkedin.com/in/joseph-gordy">LinkedIn.com/joseph-gordy</a>
     </li>
     <li>
-      <span><i class="material-icons">phone_android</i>1•334•718•6808</span>
+      <span><i class="material-icons">phone_android</i></span>
+      <h4>Call me at</h4>
+      <a href="tel:13347186808">334 • 718 • 6808</a>
     </li>`
 
   let image = document.createElement("img");
@@ -120,54 +126,65 @@ for (var i = 0; i < 125; i++) {
   dot.appendChild(cross);
 }
 
+createRepo = (data, i) => {
+
+  let eachRepo = document.createElement('div');
+  eachRepo.setAttribute('class', 'eachRepo');
+  repositories.appendChild(eachRepo);
+
+  let repo_container = document.createElement('div');
+  repo_container.setAttribute('class', 'repo_container');
+  eachRepo.appendChild(repo_container);
+
+  let link_container = document.createElement('div');
+  link_container.setAttribute('class', 'link_container');
+  eachRepo.appendChild(link_container);
+
+  if (data[i].homepage != null) {
+
+    let site = document.createElement('a');
+    site.setAttribute('href', `${data[i].homepage}`);
+    site.setAttribute('class', 'github');
+    link_container.appendChild(site);
+
+    let ghIcon = document.createElement('div');
+    ghIcon.setAttribute('class', 'ghIcon');
+    ghIcon.innerHTML = `<i class="fa fa-globe" aria-hidden="true"></i>`;
+    site.appendChild(ghIcon);
+  }
+
+  let link = document.createElement('a');
+  link.setAttribute('href', `${data[i].html_url}`);
+  link_container.appendChild(link);
+
+  let title = document.createElement('h4');
+  title.textContent = `${data[i].name}`;
+  repo_container.appendChild(title);
+
+  let language = document.createElement('h5');
+  language.setAttribute('class', 'language');
+  language.textContent = `${data[i].language}`;
+  repo_container.appendChild(language);
+
+  let codeIcon = document.createElement('div');
+  codeIcon.setAttribute('class', 'codeIcon');
+  codeIcon.innerHTML = `<i class="material-icons">code</i>`;
+  link.appendChild(codeIcon);
+}
+
 fetch('https://api.github.com/users/jgordy/repos?sort=created')
     .then(results => {
       return results.json();
     }).then(data => {
       for (var i = 0; i < data.length; i++) {
 
-        let eachRepo = document.createElement('div');
-        eachRepo.setAttribute('class', 'eachRepo');
-        repositories.appendChild(eachRepo);
-
-        let repo_container = document.createElement('div');
-        repo_container.setAttribute('class', 'repo_container');
-        eachRepo.appendChild(repo_container);
-
-        let link_container = document.createElement('div');
-        link_container.setAttribute('class', 'link_container');
-        eachRepo.appendChild(link_container);
-
-        if (data[i].homepage != null) {
-
-          let site = document.createElement('a');
-          site.setAttribute('href', `${data[i].homepage}`);
-          site.setAttribute('class', 'github');
-          link_container.appendChild(site);
-
-          let ghIcon = document.createElement('div');
-          ghIcon.setAttribute('class', 'ghIcon');
-          ghIcon.innerHTML = `<i class="fa fa-globe" aria-hidden="true"></i>`;
-          site.appendChild(ghIcon);
-        }
-
-        let link = document.createElement('a');
-        link.setAttribute('href', `${data[i].html_url}`);
-        link_container.appendChild(link);
-
-        let title = document.createElement('h4');
-        title.textContent = `${data[i].name}`;
-        repo_container.appendChild(title);
-
-        let language = document.createElement('h5');
-        language.setAttribute('class', 'language');
-        language.textContent = `${data[i].language}`;
-        repo_container.appendChild(language);
-
-        let codeIcon = document.createElement('div');
-        codeIcon.setAttribute('class', 'codeIcon');
-        codeIcon.innerHTML = `<i class="material-icons">code</i>`;
-        link.appendChild(codeIcon);
+        if (data[i].homepage) {
+          console.log("if");
+          createRepo(data, i);
+        } else if (i <= 10 && !data[i].homepage) {
+          console.log("elseif");
+          createRepo(data, i);
+        };
 
       }// end of for loop
 
