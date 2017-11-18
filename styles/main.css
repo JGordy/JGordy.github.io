@@ -335,8 +335,8 @@ img {
 }
 
 .image-container {
-  flex-basis: 30%;
-  margin-bottom: 3rem;
+  flex-basis: 23%;
+  /*margin-bottom: 3rem;*/
   text-align: center;
   position: relative;
 }
@@ -357,7 +357,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(16, 32, 39, 0.8);
+  background-color: rgba(16, 32, 39, 0.9);
   overflow: hidden;
   width: 100%;
   height: 0%;
@@ -369,15 +369,51 @@ img {
 }
 
 .text {
-  white-space: nowrap;
-  color: white;
+  color: rgba(255,255,255, 1.0);
   font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  /*overflow: hidden;*/
   position: absolute;
-  overflow: hidden;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  white-space: nowrap;
+  width: 100%;
+}
+
+.views h3 {
+  margin-bottom: 1rem;
+}
+
+.view_icons i {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 36px;
+}
+
+.project_skills, .views {
+  width: 90%;
+  margin: 0rem auto;
+}
+
+.skills_list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.skills_list span {
+  background-color: rgba(100, 199, 200, 1);
+  border-radius: 15px;
+  color: #102027;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
 }
 
 
@@ -395,7 +431,7 @@ img {
   border-radius: 0;
   position: absolute;
   right: 0;
-  top: 2480px;
+  top: 2380px;
   width: 100%;
   z-index: -1;
 }
