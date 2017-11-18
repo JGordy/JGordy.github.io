@@ -317,13 +317,18 @@ img {
 /* project page styling */
 
 .projects-section {
-  align-items: center;
   background-color: #102027;
-  display: flex;
-  justify-content: center;
   min-height: 800px;
   padding: 3rem 0rem;
   width: 100%;
+}
+
+.projects-section h1 {
+  color: rgba(255,255,255, 0.4);
+  font-family: "Roboto Slab", serif;
+  font-size: 32px;
+  text-align: center;
+  padding: 2rem 0rem;
 }
 
 .projects {
@@ -331,6 +336,7 @@ img {
   flex-flow: row wrap;
   justify-content: space-around;
   height: 80%;
+  margin: 0rem auto;
   width: 90%;
 }
 
@@ -386,6 +392,7 @@ img {
 }
 
 .views h3 {
+  font-family: "Roboto Slab", serif;
   margin-bottom: 1rem;
 }
 
@@ -431,13 +438,14 @@ img {
   border-radius: 0;
   position: absolute;
   right: 0;
-  top: 2380px;
+  top: 2480px;
   width: 100%;
   z-index: -1;
 }
 
 #repo_header {
   color: #102027;
+  font-family: "Roboto Slab", serif;
   padding-bottom: 1rem;
   text-align: center;
 }
