@@ -4,6 +4,7 @@ let header = document.querySelector(".header"),
     wrapper = document.querySelector('#wrapper'),
     main = document.querySelector('#main'),
     contacts = document.querySelector('.contact-list'),
+    image = document.querySelector('.image')
     repositories = document.querySelector('.repositories');
 
 // adding github user data to the DOM
@@ -13,7 +14,7 @@ function vCardFunction (data) {
                         <span><i class="material-icons">person_pin</i></i></span> ${data.location}
                       </li>
                       <li>
-                        <span><i class="material-icons">school</i></span>The Iron Yard
+                        <span><i class="material-icons">school</i></span><a href="https://www.theironyard.com/" target="_blank">The Iron Yard</a>
                       </li>
                       <li>
                         <span><i class="fa fa-github" aria-hidden="true"></i></span><a href=${data.html_url} target="_blank">github.com/Jgordy</a>
