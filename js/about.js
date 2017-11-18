@@ -72,7 +72,7 @@ function vCardFunction () {
     <li>
       <span><i class="material-icons">phone_android</i></span>
       <h4>Call me at</h4>
-      <a href="tel:13347186808">334 • 718 • 6808</a>
+      <a href="tel:13347186808">(334) 718 - 6808</a>
     </li>`
 
   let image = document.createElement("img");
