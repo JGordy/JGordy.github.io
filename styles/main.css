@@ -338,12 +338,6 @@ img {
   flex-basis: 100%;
 }
 
-/*span {
-  color: rgba(100, 199, 200, 1);
-  font-weight: bold;
-  margin-right: 5px;
-}*/
-
 .list {
   /*border-top: 2px solid #62727b;*/
   display: flex;
@@ -502,6 +496,37 @@ img {
 .view_icons i {
   color: rgba(255, 255, 255, 0.7);
   font-size: 36px;
+}
+
+.code_link, .site_link {
+  background-color: #06FDD8;
+  border-radius: 50%;
+  color: #102027;
+  font-size: 1.2rem;
+  margin: 0rem auto;
+  opacity: 0;
+  padding: 0.9rem 0rem;
+  /*position: absolute;*/
+  transform: translate(-50%, -50%);
+  transition: opacity 0.8s;
+  width: 20%;
+}
+
+.see_project {
+  background-color: #06FDD8;
+  border-radius: 50%;
+  color: #102027;
+  font-size: 0.8rem;
+  padding: 1.7rem 0rem;
+  margin: 0rem auto;
+  text-transform: uppercase;
+  transform: translate(0%, 50%);
+  width: 35%;
+}
+
+.see_project:hover + .code_link + .site_link {
+  opacity: 1;
+  transition: opacity 0.8s;
 }
 
 .project_skills, .views {

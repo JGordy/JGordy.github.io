@@ -28,7 +28,7 @@ letterHover = (i) => {
 
 // getting the date to use for a later idea
 let date = new Date();
-console.log(date.getMonth(), date.getDate());
+console.log(date.getMonth() + 1, date.getDate());
 
 // adding github user data to the DOM
 function vCardFunction (data) {
