@@ -2,6 +2,8 @@
 #102027 - dark background color
 #37474f - heading text color
 #62727b - text color
+rgba(100,199,200,1) - highlight color
+rgba(255,255,255,1) - hightlight color
 */
 
 * {
@@ -375,6 +377,7 @@ img {
 
 .hire::before {
   content: "Available for hire";
+  padding: 0.25rem 0.6rem;
 }
 
 .hire:hover:before {
@@ -813,7 +816,6 @@ nav a {
 }
 
 #content_container {
-  background-color: rgba(245, 245, 245, 0.6);
   border-radius: 5%;
   flex-direction: column;
   align-items: center;
