@@ -4,17 +4,37 @@ let header = document.querySelector(".header"),
     wrapper = document.querySelector('#wrapper'),
     main = document.querySelector('#main'),
     contacts = document.querySelector('.contact-list'),
-    image = document.querySelector('.image')
+    image = document.querySelector('.image'),
+    mainHeader = document.querySelector('#main_header'),
     repositories = document.querySelector('.repositories');
+
+// adding spans around each letter in the header to animate them
+let newHeader = "";
+for (var i = 0; i < mainHeader.innerHTML.length; i++) {
+  newHeader += `<div class="letter" >${mainHeader.innerHTML[i]}</div>`;
+}
+mainHeader.innerHTML = newHeader;
+
+let date = new Date();
+console.log(date.getMonth(), date.getDate());
 
 // adding github user data to the DOM
 function vCardFunction (data) {
+  let company;
+  if (data.company === null) {
+    company = `<a class="company hire" href="mailTo:joe.a.gordy@gmail.com" ></a>`;
+  } else {
+    company = data.company;
+  }
 
     list.innerHTML = `<li>
                         <span><i class="material-icons">person_pin</i></i></span> ${data.location}
                       </li>
                       <li>
                         <span><i class="material-icons">school</i></span><a href="https://www.theironyard.com/" target="_blank">The Iron Yard</a>
+                      </li>
+                      <li>
+                        <span><i class="material-icons">business</i></span> ${company}
                       </li>
                       <li>
                         <span><i class="fa fa-github" aria-hidden="true"></i></span><a href=${data.html_url} target="_blank">github.com/Jgordy</a>
@@ -37,7 +57,7 @@ function vCardFunction (data) {
       <span><i class="material-icons">phone_android</i></span>
       <h4>Call me at</h4>
       <a href="tel:13347186808">(334) 718 - 6808</a>
-    </li>`
+    </li>`;
 
   let image = document.createElement("img");
   image.setAttribute("src", data.avatar_url);
@@ -129,7 +149,7 @@ createRepo = (data, i) => {
   link.appendChild(codeIcon);
 }
 
-// smooth scrolling function for navigation
+// smooth scrolling jquery function for navigation
 $('a').click(function(){
   $('html, body').animate({
     scrollTop: $( $(this).attr('href') ).offset().top

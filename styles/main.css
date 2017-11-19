@@ -65,13 +65,78 @@ body {
   padding: 8px;
 }
 
-.header h1 {
+#main_header {
   color: #37474f;
+  display: flex;
   font-family: "Roboto Slab", serif;
   font-size: 5rem;
   font-weight: bold;
-  /*letter-spacing: .1em;*/
+  justify-content: space-between;
   padding: 0px;
+}
+
+.letter {
+  min-width: 1.5rem;
+  transition: transform 0.5s;
+  /*animation: 3s ease-out 0s 1 tiltLetter;*/
+}
+
+.letter:hover {
+  animation: 0.7s ease-out 0s 1 springLetter;
+  /*transform: rotate(15deg);*/
+  transition: transform 0.3s animation 2s;
+}
+
+@keyframes tiltLetter {
+  0% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(-35deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  55% {
+    transform: rotate(-33deg);
+  }
+  60% {
+    transform: rotate(-28deg);
+  }
+  75% {
+    transform: rotate(-22deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes springLetter {
+  0% {
+    color: #37474f;
+    transform:scale(1, 1);
+  }
+  45% {
+    transform:scale(0.75,1.5);
+  }
+  50% {
+    color: #9dadb5;
+    transform:scale(1.5, 0.75);
+  }
+  55% {
+    color: #6a7a82;
+    transform:scale(1.2, 0.9);
+  }
+  60% {
+    /*transform: scale(1.5, 0.75);*/
+  }
+  75% {
+    transform:scale(0.75,1.25);
+  }
+  100% {
+    color: #37474f;
+    transform:scale(1, 1);
+  }
 }
 
 .header h3 {
@@ -305,6 +370,41 @@ img {
   font-size: 2rem;
 }
 
+.company {
+  animation: 2s ease 0s infinite pulse;
+}
+
+.company:hover {
+  color: rgba(255, 255, 255, 0.4);
+  animation: none;
+}
+
+.hire::before {
+  content: "Available for hire";
+}
+
+.hire:hover:before {
+  content: "Hire me";
+}
+
+@keyframes pulse {
+  0% {
+    color: rgba(255, 255, 255, 0.0);
+  }
+  25% {
+    color: rgba(255, 255, 255, 1);
+  }
+  50% {
+    color: rgba(100, 199, 200, 1);
+  }
+  75% {
+    color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.0);
+  }
+}
+
 .about a {
   color: rgba(255,255,255, 0.8);
   text-decoration: none;
@@ -415,7 +515,8 @@ img {
 }
 
 .skills_list span {
-  background-color: rgba(100, 199, 200, 1);
+  /*background-color: rgba(100, 199, 200, 1);*/
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 15px;
   color: #102027;
   font-size: 0.75rem;
