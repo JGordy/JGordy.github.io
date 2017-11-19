@@ -81,10 +81,10 @@ body {
   /*animation: 3s ease-out 0s 1 tiltLetter;*/
 }
 
-.letter:hover {
+.letter.hover {
   animation: 0.7s ease-out 0s 1 springLetter;
   /*transform: rotate(15deg);*/
-  transition: transform 0.3s animation 2s;
+  transition: transform 0.3s;
 }
 
 @keyframes tiltLetter {
@@ -126,9 +126,6 @@ body {
   55% {
     color: #6a7a82;
     transform:scale(1.2, 0.9);
-  }
-  60% {
-    /*transform: scale(1.5, 0.75);*/
   }
   75% {
     transform:scale(0.75,1.25);

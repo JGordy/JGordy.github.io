@@ -6,14 +6,24 @@ let header = document.querySelector(".header"),
     contacts = document.querySelector('.contact-list'),
     image = document.querySelector('.image'),
     mainHeader = document.querySelector('#main_header'),
-    repositories = document.querySelector('.repositories');
+    repositories = document.querySelector('.repositories'),
+    newHeader = "";
 
 // adding spans around each letter in the header to animate them
-let newHeader = "";
 for (var i = 0; i < mainHeader.innerHTML.length; i++) {
-  newHeader += `<div class="letter" >${mainHeader.innerHTML[i]}</div>`;
+  newHeader += `<div onmouseover="letterHover(${i})" class="letter" id="letter${i}" >${mainHeader.innerHTML[i]}</div>`;
 }
 mainHeader.innerHTML = newHeader;
+
+letterHover = (i) => {
+  // console.log(i);
+  let letter = document.querySelector(`#letter${i}`);
+  letter.setAttribute('class', 'letter hover');
+
+  setTimeout(function() {
+    letter.setAttribute('class', 'letter');
+  }, 600);
+}
 
 let date = new Date();
 console.log(date.getMonth(), date.getDate());
