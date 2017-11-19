@@ -2,9 +2,7 @@
 #102027 - dark background color
 #37474f - heading text color
 #62727b - text color
-
 */
-
 
 * {
   margin: 0px;
@@ -18,7 +16,9 @@ body {
   height: 100%;
 }
 
-/* navbar styling */
+/*********************************
+        navbar styling
+**********************************/
 
 .nav {
   background-color: rgba(245, 245, 245, 0.9);
@@ -44,7 +44,9 @@ body {
   margin-bottom: -15px;
 }
 
-/* main section styling */
+/*********************************
+       main section styling
+**********************************/
 
 .main {
   /* for parallax scroll*/
@@ -83,7 +85,6 @@ body {
 
 .letter.hover {
   animation: 0.7s ease-out 0s 1 springLetter;
-  /*transform: rotate(15deg);*/
   transition: transform 0.3s;
 }
 
@@ -259,7 +260,9 @@ body {
   }
 }
 
-/* about me section */
+/*********************************
+      about me page styling
+**********************************/
 
 .about {
   background-color: #37474f;
@@ -381,24 +384,25 @@ img {
 }
 
 .hire:hover:before {
+  color: rgba(100, 199, 200, 1);
   content: "Hire me";
 }
 
 @keyframes pulse {
   0% {
-    color: rgba(255, 255, 255, 0.0);
-  }
-  25% {
     color: rgba(255, 255, 255, 1);
   }
+  /*25% {
+    color: rgba(255, 255, 255, 1);
+  }*/
   50% {
     color: rgba(100, 199, 200, 1);
   }
-  75% {
+  /*75% {
     color: rgba(255, 255, 255, 1);
-  }
+  }*/
   100% {
-    color: rgba(255, 255, 255, 0.0);
+    color: rgba(255, 255, 255, 1);
   }
 }
 
@@ -411,7 +415,9 @@ img {
   color: rgba(255,255,255, 0.4);
 }
 
-/* project page styling */
+/*********************************
+      project page styling
+**********************************/
 
 .projects-section {
   background-color: #102027;
@@ -519,10 +525,18 @@ img {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   margin: 0.25rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+.skills_list span:hover {
+  background-color: rgba(100, 199, 200, 1);
+  color: rgba(255, 255, 255, 0.9);
+  transition: background-color 0.3s, color 0.3s;
+}
 
-/* repository section styling */
+/*********************************
+    repository section styling
+**********************************/
 
 .repos {
   background-color: rgba(100, 199, 200, 0.7);
@@ -618,7 +632,9 @@ img {
   transition: opacity 0.7s;
 }
 
-/* footer styling */
+/*********************************
+    contact/footer styling
+**********************************/
 
 .footer {
   background-color: #102027;
@@ -692,7 +708,9 @@ img {
   font-size: 48px;
 }
 
-/****** Tablet Styling ******/
+/*********************************
+      tablet media query styling
+**********************************/
 
 @media (max-width: 1000px) {
 
@@ -723,7 +741,10 @@ height: 100%;
 }
 }
 
-/******** Mobile View ********/
+
+/*********************************
+      mobile view styling
+**********************************/
 
 @media (max-width: 500px) {
 

@@ -15,6 +15,7 @@ for (var i = 0; i < mainHeader.innerHTML.length; i++) {
 }
 mainHeader.innerHTML = newHeader;
 
+// adding letter animation on mouseover
 letterHover = (i) => {
   // console.log(i);
   let letter = document.querySelector(`#letter${i}`);
@@ -25,6 +26,7 @@ letterHover = (i) => {
   }, 600);
 }
 
+// getting the date to use for a later idea
 let date = new Date();
 console.log(date.getMonth(), date.getDate());
 
