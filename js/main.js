@@ -1,6 +1,4 @@
-
 // Greeting for main header
-
 let today = new Date();
 let hourNow = today.getHours();
 let greeting;
@@ -19,7 +17,6 @@ document.getElementById('greet').textContent = greeting;
 
 
 // For the menu toggle
-
 function myFunction(x) {
     x.classList.toggle("change");
 }
