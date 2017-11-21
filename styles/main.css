@@ -606,21 +606,17 @@ img {
 **********************************/
 
 .repos {
-  background-color: rgba(100, 199, 200, 0.7);
+  background-image: url("http://www.fullhdwpp.com/wp-content/uploads/programming-and-code-13_www.FullHDWpp.com_.jpg");
   min-height: 300px;
-  padding: 3rem 0rem;
+  /*padding: 3rem 0rem;*/
   width: 100%;
 }
 
-#gh-image {
-  border: none;
-  border-radius: 0;
-  position: absolute;
-  right: 0;
-  top: 2680px;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+#repo-backer {
+  background-color: rgba(100, 199, 200, 0.7);
+  height: 100%;
+  padding: 3rem 0rem;
+  width: 100%;
 }
 
 #repo_header {
@@ -781,6 +777,36 @@ img {
 **********************************/
 
 @media (max-width: 1000px) {
+  /* colors used:
+  #102027 - dark background color
+  #37474f - heading text color
+  #62727b - text color
+  rgba(100,199,200,1) - highlight color
+  rgba(255,255,255,1) - highlight color
+  */
+
+  textarea:hover,
+  input:hover,
+  textarea:active,
+  input:active,
+  textarea:focus,
+  input:focus,
+  button:focus,
+  button:active,
+  button:hover,
+  label:focus,
+  .btn:active,
+  .btn.active
+  {
+      box-shadow: none!important;
+  }
+
+  * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
   .nav {
     top: 15vh;
@@ -847,9 +873,9 @@ img {
     flex-basis: 25%;
   }
 
-  #gh-image {
-    top: 3200px;
-    height: 100vh;
+  .eachRepo {
+    background-color: rgba(255, 255, 255, 1);
+    flex-basis: 30%;
   }
 
   .contact-list li {
@@ -870,6 +896,14 @@ img {
 }
 
 @media (max-width: 850px) {
+  /* colors used:
+  #102027 - dark background color
+  #37474f - heading text color
+  #62727b - text color
+  rgba(100,199,200,1) - highlight color
+  rgba(255,255,255,1) - highlight color
+  */
+
   #main_header {
     font-size: 3rem;
   }
@@ -885,91 +919,97 @@ img {
 **********************************/
 
 @media (max-width: 500px) {
+  /* colors used:
+  #102027 - dark background color
+  #37474f - heading text color
+  #62727b - text color
+  rgba(100,199,200,1) - highlight color
+  rgba(255,255,255,1) - highlight color
+  */
 
-nav {
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-  padding:  5px 0px;
-  /*position: -webkit-sticky;*/
-  position: fixed;
-  top: 0px;
-  width: 100%;
-}
+  nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding:  5px 0px;
+    /*position: -webkit-sticky;*/
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
 
-nav a {
-  flex: 0 1 10%;
-  font-size: 20px;
-  /*display: flex;
-  justify-content: center;*/
-  margin: 0rem;
-}
+  nav a {
+    flex: 0 1 10%;
+    font-size: 20px;
+    /*display: flex;
+    justify-content: center;*/
+    margin: 0rem;
+  }
 
-.nav {
-  /*position: -webkit-sticky;*/
-  position: fixed;
-  top: 0px;
-}
+  .nav {
+    /*position: -webkit-sticky;*/
+    position: fixed;
+    top: 0px;
+  }
 
-.header h1 {
-  font-size: 28px;
-}
+  .header h1 {
+    font-size: 28px;
+  }
 
-#main.main {
-  min-height: 650px;
-}
+  #main.main {
+    min-height: 650px;
+  }
 
-.wrapper {
-  margin: 0 auto;
-  padding: 0px;
-  width: 100%;
-}
+  .wrapper {
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
+  }
 
-#content_container {
-  border-radius: 5%;
-  flex-direction: column;
-  align-items: center;
-  font-size: 20px;
-  margin: 0rem;
-  padding: 0;
-  width: 85%;
-}
+  #content_container {
+    border-radius: 5%;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    margin: 0rem;
+    padding: 0;
+    width: 85%;
+  }
 
-#icon {
-  margin-left: 0px;
-}
+  #icon {
+    margin-left: 0px;
+  }
 
-.basics {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
+  .basics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 
-.story, .icon {
-  width: 80%;
-}
+  .story, .icon {
+    width: 80%;
+  }
 
-.story {
-  margin-left: 0px;
-}
+  .story {
+    margin-left: 0px;
+  }
 
-.story p {
-  padding-left: 0px;
-  text-align: center;
-}
+  .story p {
+    padding-left: 0px;
+    text-align: center;
+  }
 
-.basics h1, .story h1  {
-  text-align: center;
-  padding-bottom: 0px;
-}
+  .basics h1, .story h1  {
+    text-align: center;
+    padding-bottom: 0px;
+  }
 
-.basics ul {
-  /*margin-left: 100px;*/
-}
+  .basics ul {
+    /*margin-left: 100px;*/
+  }
 
-img {
-  margin-top: 20px;
-}
-
+  img {
+    margin-top: 20px;
+  }
 }
