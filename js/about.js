@@ -12,8 +12,7 @@ let header = document.querySelector(".header"),
 // changing the color of the navigation when moved from "main"
 lightNav = () => {
   let navLinks =  document.querySelectorAll(".navLinks");
-  console.log(navLinks[0].className);
-    if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
       for (var i = 0; i < navLinks.length; i++) {
         navLinks[i].className = "navLinks light";
       }
@@ -24,7 +23,6 @@ lightNav = () => {
     }
   };
 window.onscroll = function() {lightNav()};
-
 
 // adding spans around each letter in the header to animate them
 for (var i = 0; i < mainHeader.innerHTML.length; i++) {
