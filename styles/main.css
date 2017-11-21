@@ -62,7 +62,7 @@ body {
 .nav a:hover {
   background-color: rgba(100,199,200,1);
   color: #102027;
-  transform: translate(-65%);
+  transform: translate(-55%);
   transition: transform 0.5s, color 0.5s, background-color 0.5s;
 }
 
