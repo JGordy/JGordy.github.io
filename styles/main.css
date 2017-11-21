@@ -18,6 +18,10 @@ body {
   height: 100%;
 }
 
+body, #main, #about, #projects, #repos, #footer {
+  width: 100vw;
+}
+
 /*********************************
         navbar styling
 **********************************/
@@ -60,15 +64,22 @@ body {
 
 .nav-icons {
   margin-right: 0.75rem;
+  transition: opacity 2s;
+}
+
+.nav-text {
+  transition: transform 1s;
 }
 
 .nav a:hover .nav-icons {
-  visibility: hidden;
+  /*visibility: hidden;*/
+  opacity: 0;
+  transition: opacity 0.5s;
 }
 
 .nav a:hover .nav-text {
   transform: translate(-30%);
-  transition: transform 0.3s;
+  transition: transform 1.5s;
 }
 
 
@@ -213,7 +224,8 @@ body {
 
 #about-me-button i {
   font-size: 48px;
-  animation: 1.3s ease-out 0s infinite aboutMeSlider;
+  -webkit-animation: 1.3s ease-out 0s infinite aboutMeSlider;
+          animation: 1.3s ease-out 0s infinite aboutMeSlider;
 }
 
 @keyframes aboutMeSlider {
@@ -222,14 +234,16 @@ body {
     top: 86%;
     left: 48%;
     opacity: 1;
-    transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
   }
   100% {
     position: absolute;
     top: 92%;
     left: 48%;
     opacity: 0;
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -295,16 +309,16 @@ body {
   background-color: #37474f;
   min-height: 100vh;
   padding: 3rem 0rem;
-  width: 100%;
+  width: 100vw;
 }
 
-.about h1 {
+/*.about h1 {
   color: rgba(255,255,255, 1.0);
   font-family: "Roboto Slab", serif;
   font-size: 3rem;
   font-weight: lighter;
   text-align: center;
-}
+}*/
 
 #content_container {
   border-radius: 15px;
@@ -346,9 +360,9 @@ img {
   border-bottom: 2px solid #62727b;
   color: rgba(255, 255, 255, 0.3);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2rem 0rem;
-  /*height: 0rem;*/
+  width: 90vw;
 }
 
 #skills_header {
@@ -604,7 +618,7 @@ img {
   position: absolute;
   right: 0;
   top: 2680px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: -1;
 }
@@ -768,31 +782,87 @@ img {
 
 @media (max-width: 1000px) {
 
+  .about .wrapper {
+  flex-wrap: wrap;
+  height: 100%;
+  }
 
-.wrapper {
-flex-wrap: wrap;
-height: 100%;
-}
+  #content_container {
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+  }
 
-.basics {
-  order: 0;
-  flex: 1 1 30%;
-}
+  #icon {
+    flex: 1 1 30%;
+    margin-top: -10px;
+    margin-right: 0rem;
+    text-align: center;
+  }
 
-#icon {
-  order: -5;
-  flex: 1 1 30%;
-  margin-top: - 30px;
-}
+  .story {
+    flex-basis: 40%;
+    margin-left: 0px;
+  }
 
-.story {
-  order: 5;
-  border-top: 2px solid lightgray;
-}
+  .story p {
+    border-left: none;
+    font-size: 1rem;
+    padding-left: 0rem;
+  }
 
-.story p {
-  border-left: none;
-}
+  .basics {
+  /*width: 80%;*/
+  }
+
+  .skills {
+    color: rgba(255, 255, 255, 0.7);
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  #skills_header {
+    color: rgba(255, 255, 255, 1);
+    flex-basis: 100%;
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  .skills span {
+    flex-basis: 30%;
+    padding-bottom: 1rem;
+    text-align: center;
+  }
+
+  .list {
+    flex-flow: row wrap;
+  }
+
+  .list li {
+    flex-basis: 25%;
+  }
+
+  #gh-image {
+    top: 3200px;
+    height: 100vh;
+  }
+
+  .contact-list li {
+    flex: 1 1 25%;
+  }
+
+  .contact-list li a {
+    letter-spacing: 0.0rem;
+  }
+
+  .contact-list li h4 {
+    font-size: 0.75rem;
+  }
+
+  .link_container {
+    opacity: 1;
+  }
 }
 
 

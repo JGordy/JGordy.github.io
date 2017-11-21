@@ -101,8 +101,8 @@ for (var i = 0; i < 125; i++) {
   dot.setAttribute('class', 'dot');
   main.appendChild(dot);
   if (dot.className === 'dot') {
-    dot.style.top === Math.random() * 100 + "%";
-    dot.style.left === Math.random() * 100 + "%";
+    dot.style.top === Math.random() * 100 + "vh";
+    dot.style.left === Math.random() * 100 + "vw";
     dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
     dot.style.transform = `rotate(${Math.random() * 180}deg)`;
   }
@@ -110,8 +110,8 @@ for (var i = 0; i < 125; i++) {
   setTimeout(function() {
     dot.setAttribute('class', 'move');
     if (dot.className === 'move') {
-      dot.style.top = Math.random() * 100 + "%";
-      dot.style.left = Math.random() * 100 + "%";
+      dot.style.top = Math.random() * 100 + "vh";
+      dot.style.left = Math.random() * 100 + "vw";
       dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
     }
   }, 200);
