@@ -782,6 +782,10 @@ img {
 
 @media (max-width: 1000px) {
 
+  .nav {
+    top: 15vh;
+  }
+
   .about .wrapper {
   flex-wrap: wrap;
   height: 100%;
@@ -862,6 +866,16 @@ img {
 
   .link_container {
     opacity: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  #main_header {
+    font-size: 3rem;
+  }
+
+  .nav {
+    top: 5vh;
   }
 }
 
