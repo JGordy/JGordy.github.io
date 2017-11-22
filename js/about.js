@@ -187,7 +187,18 @@ createRepo = (data, i) => {
 }
 
 // adding floating elements in the background of main section
-for (var i = 0; i < 100; i++) {
+let floatersAmount;
+if (window.screen.width <= 500) {
+  floatersAmount = 25;
+} else if (window.screen.width <= 800) {
+  floatersAmount = 40;
+} else if (window.screen.width <= 1000) {
+  floatersAmount = 75;
+} else {
+  floatersAmount = 100;
+}
+
+for (var i = 0; i < floatersAmount; i++) {
   let dot = document.createElement('div');
   let line = document.createElement('div');
   let cross = document.createElement('div');
@@ -225,3 +236,7 @@ for (var i = 0; i < 100; i++) {
 // getting the date to use for a later idea
 let date = new Date();
 console.log(date.getMonth() + 1, date.getDate());
+
+// getting screen width and height
+console.log("WINDOW.SCREEN.WIDTH: ",window.screen.width);
+console.log("WINDOW.SCREEN.HEIGHT: ", window.screen.height);
