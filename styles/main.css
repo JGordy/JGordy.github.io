@@ -35,6 +35,10 @@ body, #main, #about, #projects, #repos, #footer {
   z-index: 1;
 }
 
+.navLinks.menu, .navLinks.menu.light {
+  display: none;
+}
+
 
 .navLinks {
   align-items: center;
@@ -55,7 +59,7 @@ body, #main, #about, #projects, #repos, #footer {
   transition: transform 0.5s, background-color 0.5s, color 0.5s;
 }
 
-.nav a:hover {
+.navLinks:hover {
   background-color: rgba(100,199,200,1);
   color: #102027;
   transform: translate(-55%);
@@ -71,13 +75,12 @@ body, #main, #about, #projects, #repos, #footer {
   transition: transform 1s;
 }
 
-.nav a:hover .nav-icons {
-  /*visibility: hidden;*/
+.navLinks:hover .nav-icons {
   opacity: 0;
   transition: opacity 0.5s;
 }
 
-.nav a:hover .nav-text {
+.navLinks:hover .nav-text {
   transform: translate(-30%);
   transition: transform 1.5s;
 }
@@ -309,7 +312,6 @@ body, #main, #about, #projects, #repos, #footer {
   background-color: #37474f;
   min-height: 100vh;
   padding: 3rem 0rem;
-  width: 100vw;
 }
 
 /*.about h1 {
@@ -380,7 +382,6 @@ img {
 }
 
 .list {
-  /*border-top: 2px solid #62727b;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -428,15 +429,9 @@ img {
   0% {
     color: rgba(255, 255, 255, 1);
   }
-  /*25% {
-    color: rgba(255, 255, 255, 1);
-  }*/
   50% {
     color: rgba(100, 199, 200, 1);
   }
-  /*75% {
-    color: rgba(255, 255, 255, 1);
-  }*/
   100% {
     color: rgba(255, 255, 255, 1);
   }
@@ -459,7 +454,6 @@ img {
   background-color: #102027;
   min-height: 100vh;
   padding: 3rem 0rem;
-  width: 100%;
 }
 
 .projects-section h1 {
@@ -608,8 +602,6 @@ img {
 .repos {
   background-image: url("http://www.fullhdwpp.com/wp-content/uploads/programming-and-code-13_www.FullHDWpp.com_.jpg");
   min-height: 300px;
-  /*padding: 3rem 0rem;*/
-  width: 100%;
 }
 
 #repo-backer {
@@ -913,7 +905,6 @@ img {
   }
 }
 
-
 /*********************************
       mobile view styling
 **********************************/
@@ -927,39 +918,45 @@ img {
   rgba(255,255,255,1) - highlight color
   */
 
-  nav {
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-    padding:  5px 0px;
-    /*position: -webkit-sticky;*/
-    position: fixed;
-    top: 0px;
-    width: 100%;
+  body, #main, #about, #projects, #repos, #footer {
+    width: 100vw;
   }
 
-  nav a {
-    flex: 0 1 10%;
-    font-size: 20px;
-    /*display: flex;
-    justify-content: center;*/
-    margin: 0rem;
-  }
-
+  /*********************************
+        mobile nav styling
+  **********************************/
   .nav {
-    /*position: -webkit-sticky;*/
-    position: fixed;
     top: 0px;
   }
 
-  .header h1 {
-    font-size: 28px;
+  .navLinks.menu, .navLinks.menu.light{
+    display: flex;
   }
 
-  #main.main {
-    min-height: 650px;
+  /*********************************
+        mobile main styling
+  **********************************/
+  .main {
+    min-height: 100vh;
   }
 
+  .header {
+    margin: 0rem auto;
+    width: 80%;
+  }
+
+  #main_header {
+    font-size: 3rem;
+    justify-content: center;
+  }
+
+  .letter {
+    min-width: 1rem;
+  }
+
+  /*********************************
+        mobile about styling
+  **********************************/
   .wrapper {
     margin: 0 auto;
     padding: 0px;
@@ -971,20 +968,13 @@ img {
     flex-direction: column;
     align-items: center;
     font-size: 20px;
-    margin: 0rem;
+    margin: 0rem auto;
     padding: 0;
-    width: 85%;
+    width: 95%;
   }
 
   #icon {
     margin-left: 0px;
-  }
-
-  .basics {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
   }
 
   .story, .icon {
@@ -1000,16 +990,106 @@ img {
     text-align: center;
   }
 
+  .basics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
   .basics h1, .story h1  {
     text-align: center;
     padding-bottom: 0px;
+  }
+
+  #skills_header {
+    font-size: 2rem;
+  }
+
+  .skills span {
+    flex-basis: 75%;
   }
 
   .basics ul {
     /*margin-left: 100px;*/
   }
 
+  .list li {
+    flex: 0 1 40%;
+    /*font-size: 24px;*/
+    justify-content: space-between;
+    margin: 15px;
+    text-align: center;
+  }
+
+  .list li:nth-child(3) {
+    order: 2;
+  }
+
   img {
     margin-top: 20px;
+  }
+
+  /*********************************
+        mobile projects styling
+  **********************************/
+  #projects h1 {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0rem auto;
+    width: 85%;
+  }
+
+  #desktop_header {
+    display: none;
+  }
+
+  .image-container .image {
+    display: none;
+    border: none;
+    border-radius: 0;
+    width: 300px;
+    transition: opacity 0.5s;
+  }
+
+  .image.mobile {
+    display: block;
+    padding-bottom: 2rem;
+    width: 275px;
+  }
+
+  /*********************************
+        mobile repository styling
+  **********************************/
+  .eachRepo {
+    flex: 1 1 75%;
+  }
+
+  /*********************************
+        mobile footer/contact styling
+  **********************************/
+  .contact-list {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  .contact-list li {
+    /*flex-basis:*/
+    margin-bottom: 5rem;
+    padding-bottom: 1rem;
+    width: 100%;
+  }
+
+  .contact-list li span {
+    margin-bottom: 1rem;
+  }
+
+  .contact-list li h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-list li a {
+    font-size: 1.4rem;
   }
 }

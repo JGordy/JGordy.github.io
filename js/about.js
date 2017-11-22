@@ -9,29 +9,14 @@ let header = document.querySelector(".header"),
     repositories = document.querySelector('.repositories'),
     newHeader = "";
 
-// changing the color of the navigation when moved from "main"
-lightNav = () => {
-  let navLinks =  document.querySelectorAll(".navLinks");
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-      for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].className = "navLinks light";
-      }
-    } else {
-      for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].className = 'navLinks';
-      }
-    }
-  };
-window.onscroll = function() {lightNav()};
-
 // adding spans around each letter in the header to animate them
 for (var i = 0; i < mainHeader.innerHTML.length; i++) {
-  newHeader += `<div onmouseover="letterHover(${i})" class="letter" id="letter${i}" >${mainHeader.innerHTML[i]}</div>`;
+  newHeader += `<div onmouseover="letterBounce(${i})" class="letter" id="letter${i}" >${mainHeader.innerHTML[i]}</div>`;
 }
 mainHeader.innerHTML = newHeader;
 
 // adding letter animation on mouseover
-letterHover = (i) => {
+letterBounce = (i) => {
   // console.log(i);
   let letter = document.querySelector(`#letter${i}`);
   letter.setAttribute('class', 'letter hover');
@@ -41,9 +26,70 @@ letterHover = (i) => {
   }, 600);
 }
 
-// getting the date to use for a later idea
-let date = new Date();
-console.log(date.getMonth() + 1, date.getDate());
+// changing the color of the navigation when moved from "main"
+changeNavColor = () => {
+  let navLinks =  document.querySelectorAll(".navLinks");
+
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+
+      for (var i = 0; i < navLinks.length; i++) {
+
+        if (navLinks[i].className === "navLinks menu") {
+
+          navLinks[i].className = "navLinks menu light"
+
+        } else if (navLinks[i].className === "navLinks") {
+
+          navLinks[i].className = "navLinks light";
+        }
+      }
+    } else {
+
+      for (var i = 0; i < navLinks.length; i++) {
+
+        if (navLinks[i].className === "navLinks menu light" || navLinks[i].className === "navLinks menu") {
+
+          navLinks[i].className = "navLinks menu"
+
+        } else if (navLinks[i].className === "navLinks light") {
+
+          navLinks[i].className = "navLinks";
+        }
+      }
+    }
+  };
+window.onscroll = function() {changeNavColor()};
+
+// smooth scrolling jquery function for navigation
+$('a').click(function(){
+  $('html, body').animate({
+    scrollTop: $( $(this).attr('href') ).offset().top
+  }, 750);
+  return false;
+});
+
+// Github api repository request
+fetch('https://api.github.com/users/jgordy/repos?sort=created')
+    .then(results => {
+      return results.json();
+    }).then(data => {
+      for (var i = 0; i < data.length; i++) {
+
+        if (data[i].homepage) {
+          createRepo(data, i);
+        } else if (i <= 10 && !data[i].homepage) {
+          createRepo(data, i);
+        };
+      }// end of for loop
+    }); // end of the repo fetch
+
+// Github api user info request
+fetch('https://api.github.com/users/jgordy')
+  .then(results => {
+    return results.json();
+  }).then(data => {
+    vCardFunction(data);
+  });
 
 // adding github user data to the DOM
 function vCardFunction (data) {
@@ -90,42 +136,6 @@ function vCardFunction (data) {
   image.setAttribute("src", data.avatar_url);
   // let icon = document.getElementById("icon");
   icon.appendChild( image );
-}
-
-// adding floating elements in the background of main section
-for (var i = 0; i < 125; i++) {
-  let dot = document.createElement('div');
-  let line = document.createElement('div');
-  let cross = document.createElement('div');
-
-  dot.setAttribute('class', 'dot');
-  main.appendChild(dot);
-  if (dot.className === 'dot') {
-    dot.style.top === Math.random() * 100 + "vh";
-    dot.style.left === Math.random() * 100 + "vw";
-    dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
-    dot.style.transform = `rotate(${Math.random() * 180}deg)`;
-  }
-
-  setTimeout(function() {
-    dot.setAttribute('class', 'move');
-    if (dot.className === 'move') {
-      dot.style.top = Math.random() * 100 + "vh";
-      dot.style.left = Math.random() * 100 + "vw";
-      dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
-    }
-  }, 200);
-
-
-  line.setAttribute('class', 'line');
-  line.style.transform = "rotate(" + Math.random() * 180 + "deg)";
-  line.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCW`
-  dot.appendChild(line);
-
-  cross.setAttribute('class', 'cross');
-  cross.style.transform = "rotate(" + Math.random() * 180 + "deg)";
-  cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`
-  dot.appendChild(cross);
 }
 
 // creating list item elements for each repo, from the api data
@@ -176,33 +186,42 @@ createRepo = (data, i) => {
   link.appendChild(codeIcon);
 }
 
-// smooth scrolling jquery function for navigation
-$('a').click(function(){
-  $('html, body').animate({
-    scrollTop: $( $(this).attr('href') ).offset().top
-  }, 750);
-  return false;
-});
+// adding floating elements in the background of main section
+for (var i = 0; i < 100; i++) {
+  let dot = document.createElement('div');
+  let line = document.createElement('div');
+  let cross = document.createElement('div');
 
-// Github api repository request
-fetch('https://api.github.com/users/jgordy/repos?sort=created')
-    .then(results => {
-      return results.json();
-    }).then(data => {
-      for (var i = 0; i < data.length; i++) {
+  dot.setAttribute('class', 'dot');
+  main.appendChild(dot);
+  if (dot.className === 'dot') {
+    dot.style.top === Math.random() * 100 + "vh";
+    dot.style.left === Math.random() * 100 + "vw";
+    dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
+    dot.style.transform = `rotate(${Math.random() * 180}deg)`;
+  }
 
-        if (data[i].homepage) {
-          createRepo(data, i);
-        } else if (i <= 10 && !data[i].homepage) {
-          createRepo(data, i);
-        };
-      }// end of for loop
-    }); // end of the repo fetch
+  setTimeout(function() {
+    dot.setAttribute('class', 'move');
+    if (dot.className === 'move') {
+      dot.style.top = Math.random() * 100 + "vh";
+      dot.style.left = Math.random() * 100 + "vw";
+      dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
+    }
+  }, 1500);
 
-// Github api user info request
-fetch('https://api.github.com/users/jgordy')
-  .then(results => {
-    return results.json();
-  }).then(data => {
-    vCardFunction(data);
-  });
+
+  line.setAttribute('class', 'line');
+  line.style.transform = "rotate(" + Math.random() * 180 + "deg)";
+  line.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCW`
+  dot.appendChild(line);
+
+  cross.setAttribute('class', 'cross');
+  cross.style.transform = "rotate(" + Math.random() * 180 + "deg)";
+  cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`
+  dot.appendChild(cross);
+}
+
+// getting the date to use for a later idea
+let date = new Date();
+console.log(date.getMonth() + 1, date.getDate());
