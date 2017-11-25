@@ -931,6 +931,14 @@ img {
 
   .navLinks.menu, .navLinks.menu.light{
     display: flex;
+    background-color: rgba(255, 255, 255, 0);
+    color: #102027;
+  }
+
+  .navLinks.menu:hover, .navLinks.menu.light:hover{
+    display: flex;
+    background-color: rgba(100,199,200,1);
+    color: rgba(255,255,255,1);
   }
 
   /*********************************
@@ -952,6 +960,15 @@ img {
 
   .letter {
     min-width: 1rem;
+  }
+  .dot {
+    border-radius: 100px;
+    width: 1.5rem;
+    height: 0.5rem;
+
+    top: 110%;
+    left: 50%;
+    transition: top 5s, left 8s;
   }
 
   /*********************************

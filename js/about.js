@@ -190,7 +190,7 @@ createRepo = (data, i) => {
 let floatersAmount;
 let screen_width = document.documentElement.clientWidth;
 let screen_height = document.documentElement.clientHeight;
-console.log(screen_height, screen_width);
+// console.log(screen_height, screen_width);
 
 if (screen_width <= 500 ) {
   floatersAmount = 25;
@@ -201,7 +201,6 @@ if (screen_width <= 500 ) {
 } else {
   floatersAmount = 100;
 }
-console.log("FLOATERAMOUNT: ", floatersAmount);
 
 for (var i = 0; i < floatersAmount; i++) {
   let dot = document.createElement('div');
@@ -243,6 +242,6 @@ let date = new Date();
 console.log(date.getMonth() + 1, date.getDate());
 
 // getting screen width and height
-console.log("WINDOW.SCREEN.WIDTH: ",window.screen.width);
-console.log("WINDOW.SCREEN.HEIGHT: ", window.screen.height);
-console.log("WINDOW.DEVICEPIXELRATIO: ", window.devicePixelRatio);
+// console.log("WINDOW.SCREEN.WIDTH: ",window.screen.width);
+// console.log("WINDOW.SCREEN.HEIGHT: ", window.screen.height);
+// console.log("WINDOW.DEVICEPIXELRATIO: ", window.devicePixelRatio);
