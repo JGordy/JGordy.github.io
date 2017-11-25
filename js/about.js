@@ -188,15 +188,16 @@ createRepo = (data, i) => {
 
 // adding floating elements in the background of main section
 let floatersAmount;
-if (window.screen.width <= 500 * window.devicePixelRatio) {
+if (window.screen.width / window.devicePixelRatio <= 500 ) {
   floatersAmount = 25;
-} else if (window.screen.width <= 800 * window.devicePixelRatio) {
+} else if (window.screen.width / window.devicePixelRatio <= 800 ) {
   floatersAmount = 40;
-} else if (window.screen.width <= 1000 * window.devicePixelRatio) {
+} else if (window.screen.width / window.devicePixelRatio <= 1000 ) {
   floatersAmount = 75;
 } else {
   floatersAmount = 100;
 }
+console.log("FLOATERAMOUNT: ", floatersAmount);
 
 for (var i = 0; i < floatersAmount; i++) {
   let dot = document.createElement('div');
@@ -241,3 +242,7 @@ console.log(date.getMonth() + 1, date.getDate());
 console.log("WINDOW.SCREEN.WIDTH: ",window.screen.width);
 console.log("WINDOW.SCREEN.HEIGHT: ", window.screen.height);
 console.log("WINDOW.DEVICEPIXELRATIO: ", window.devicePixelRatio);
+
+let screen_width = document.documentElement.clientWidth;
+let screen_height = document.documentElement.clientHeight;
+console.log(screen_height, screen_width);
