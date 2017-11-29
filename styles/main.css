@@ -921,6 +921,7 @@ img {
 
   body, #main, #about, #projects, #repos, #footer {
     width: 100vw;
+    min-height: 100vh;
   }
 
   /*********************************
@@ -946,11 +947,16 @@ img {
     position: fixed;
     top: 1.25rem;
     right: 0.5rem;
+    transition: color 0.5s;
   }
 
-  .menu.light {
-    color: rgba(255, 255, 255, 0.9);
+  .menu i {
+    font-size: 32px;
   }
+
+  /*.menu.light {
+    color: rgba(255, 255, 255, 0.9);
+  }*/
 
   .nav.openMenu .navLinks.menu, .nav.openMenu .navLinks.menu.light {
     background-color: #102027;
@@ -969,6 +975,14 @@ img {
     animation: none;
     transition: none;
     transform: none;
+  }
+
+  .navLinks:hover .nav-icons {
+    opacity: 1;
+  }
+
+  .navLinks:hover .nav-text {
+    transform: translate(0%);
   }
 
   /*********************************
@@ -1143,5 +1157,14 @@ img {
 
   .contact-list li a {
     font-size: 1.4rem;
+  }
+
+  #top_button {
+    bottom: 0.5rem;
+    right: -0.25rem;
+  }
+
+  #top_button a {
+    color: rgba(255, 255, 255, 1);
   }
 }

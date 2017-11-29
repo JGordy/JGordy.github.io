@@ -10,10 +10,9 @@ let header = document.querySelector(".header"),
     menu = document.querySelectorAll('.menu_button'),
     nav = document.querySelector('#nav'),
     screen_width = document.documentElement.clientWidth,
-    screen_height = document.documentElement.clientHeight,    
+    screen_height = document.documentElement.clientHeight,
     floatersAmount,
     newHeader = "";
-
 
 // adding event listeners for mobile menu toggle open and close
 for (var i = 0; i < menu.length; i++) {
@@ -57,9 +56,6 @@ changeNavColor = () => {
           navLinks[i].className = "navLinks light";
         }
       }
-
-      //adding a class to the navbar if the screen is below 500px
-
     } else {
       // removing class from navlinks when scroll is less than 500px from the top
       for (var i = 0; i < navLinks.length; i++) {
@@ -73,8 +69,14 @@ changeNavColor = () => {
           navLinks[i].className = "navLinks";
         }
       }
+    };
 
+    if (document.body.scrollTop > 675 || document.documentElement.scrollTop > 675) {
+      //adding a class to the navbar if the screen is below 500px
+      menu[0].style.color = "rgba(255 ,255, 255, 1)";
+    } else {
       // removing a class from the navbar if the screen is below 500px
+      menu[0].style.color = "#102027";
     }
   };
 window.onscroll = function() {changeNavColor()};
