@@ -71,7 +71,7 @@ changeNavColor = () => {
       }
     };
 
-    if (document.body.scrollTop > 675 || document.documentElement.scrollTop > 675) {
+    if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
       //adding a class to the navbar if the screen is below 500px
       menu[0].style.color = "rgba(255 ,255, 255, 1)";
     } else {
