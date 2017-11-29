@@ -961,7 +961,7 @@ img {
   }
 
   .navLinks, .navLinks.light {
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0px;
     margin: 0;
     margin-right: 0.5rem;
