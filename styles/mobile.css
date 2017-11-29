@@ -1,24 +1,24 @@
 /*This layout is for mobile viewing*/
 
-@media screen and (max-width: 600px) {
+/*@media screen and (max-width: 600px) {*/
 
-  #header {
+  /*#header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
+  }*/
 
-.header h1 {
+/*.header h1 {
   font-size: 28px;
-}
+}*/
 
-img {
+/*img {
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-}
+}*/
 
-nav {
+/*nav {
   align-items: center;
   display: flex;
   justify-content: space-around;
@@ -27,24 +27,24 @@ nav {
   position: sticky;
   top: 0px;
   width: 100%;
-}
+}*/
 
-nav a {
+/*nav a {
   flex: 1 1 10%;
   font-size: 20px;
   display: flex;
   justify-content: center;
-}
+}*/
 
-.nav {
+/*.nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
-}
+}*/
 
-#header nav a {
+/*#header nav a {
   display: none;
-}
+}*/
 
 /*nav a:nth-child(2) {
   border-left: 1px solid #82e9de;
@@ -86,55 +86,55 @@ nav a {
 
 /* End Menu toggle styling */
 
-#image-blur {
+/*#image-blur {
   background-image: url(../images/itunes_mini.jpg);
   height: 500px;
-}
+}*/
 
-#image-blur2 {
+/*#image-blur2 {
   background-image:
   url(../images/calculator_mini.jpg);
   height: 300px;
-}
+}*/
 
-#image-blur3 {
+/*#image-blur3 {
   background-image: url(../images/bent_creek_mini.jpg);
   height: 300px;
-}
+}*/
 
-#footer {
+/*#footer {
   justify-content: space-between;
 
-}
+}*/
 
-#footer img {
+/*#footer img {
   height: 30px;
-}
+}*/
 
-#email {
-  /*height: 50px;*/
-}
+/*#email {
+  height: 50px;
+}*/
 
-#footer a {
+/*#footer a {
   padding-left: 5px;
   margin-left: 0px;
-}
+}*/
 
-#footer a:hover {
+/*#footer a:hover {
   border: none;
-}
+}*/
 
-.section {
+/*.section {
   padding: 20px;
   line-height: 1.5em;
   font-size: 18px;
-}
+}*/
 
-#layer1 h1 a:hover, #layer2 h1 a:hover, #layer3 h1 a:hover {
+/*#layer1 h1 a:hover, #layer2 h1 a:hover, #layer3 h1 a:hover {
   background-color: transparent;
   border: none;
   border-radius: 0px;
   text-shadow: 2px 2px gray;
   padding: 0;
-}
-}
+}*/
+/*}*/
