@@ -1020,6 +1020,25 @@ img {
 
   }
 
+  @keyframes aboutMeSlider {
+    0% {
+      position: absolute;
+      top: 80%;
+      left: 44%;
+      opacity: 1;
+      -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+    }
+    100% {
+      position: absolute;
+      top: 92%;
+      left: 44%;
+      opacity: 0.5;
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+
   /*********************************
         mobile about styling
   **********************************/
