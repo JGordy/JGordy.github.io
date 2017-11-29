@@ -43,7 +43,7 @@ letterBounce = (i) => {
 // changing the color of the navigation when moved from "main"
 changeNavColor = () => {
 
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    if ((document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) && (screen_width >= 500)){
       //adding class to navlinks when scrolled 500px from top
       for (var i = 0; i < navLinks.length; i++) {
 
@@ -75,8 +75,9 @@ changeNavColor = () => {
       //adding a class to the navbar if the screen is below 500px
       menu[0].style.color = "rgba(255 ,255, 255, 1)";
 
-      nav.style.backgroundColor = 'rgba(255 ,255, 255, 1)';
+      nav.style.backgroundColor = 'rgba(255 ,255, 255, 0.9)';
       for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].style.backgroundColor = 'rgba(255 ,255, 255, 0.0)';
         navLinks[i].style.color = "#102027";
         navLinks[i].style.borderTop = "1px solid #102027";
       }
@@ -87,6 +88,7 @@ changeNavColor = () => {
 
       nav.style.backgroundColor = '#102027';
       for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].style.backgroundColor = 'inherit';
         navLinks[i].style.color = "rgba(255, 255, 255, 1)";
         navLinks[i].style.borderTop = "1px solid rgba(255, 255, 255, 0.2)";
       }
@@ -271,8 +273,3 @@ for (var i = 0; i < floatersAmount; i++) {
   cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`
   dot.appendChild(cross);
 }
-
-// getting screen width and height
-// console.log("WINDOW.SCREEN.WIDTH: ",window.screen.width);
-// console.log("WINDOW.SCREEN.HEIGHT: ", window.screen.height);
-// console.log("WINDOW.DEVICEPIXELRATIO: ", window.devicePixelRatio);
