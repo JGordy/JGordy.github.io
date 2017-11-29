@@ -9,6 +9,7 @@ let header = document.querySelector(".header"),
     repositories = document.querySelector('.repositories'),
     menu = document.querySelectorAll('.menu_button'),
     nav = document.querySelector('#nav'),
+    navLinks = document.querySelectorAll('.navLinks'),
     screen_width = document.documentElement.clientWidth,
     screen_height = document.documentElement.clientHeight,
     floatersAmount,
@@ -41,7 +42,6 @@ letterBounce = (i) => {
 
 // changing the color of the navigation when moved from "main"
 changeNavColor = () => {
-  let navLinks =  document.querySelectorAll(".navLinks");
 
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
       //adding class to navlinks when scrolled 500px from top
@@ -71,13 +71,28 @@ changeNavColor = () => {
       }
     };
 
-    if (document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) {
+    if ((document.body.scrollTop > 650 || document.documentElement.scrollTop > 650) && (screen_width <= 500)) {
       //adding a class to the navbar if the screen is below 500px
       menu[0].style.color = "rgba(255 ,255, 255, 1)";
+
+      nav.style.backgroundColor = 'rgba(255 ,255, 255, 1)';
+      for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].style.color = "#102027";
+        navLinks[i].style.borderTop = "1px solid #102027";
+      }
+
     } else {
       // removing a class from the navbar if the screen is below 500px
       menu[0].style.color = "#102027";
+
+      nav.style.backgroundColor = '#102027';
+      for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].style.color = "rgba(255, 255, 255, 1)";
+        navLinks[i].style.borderTop = "1px solid rgba(255, 255, 255, 0.2)";
+      }
+
     }
+
   };
 window.onscroll = function() {changeNavColor()};
 

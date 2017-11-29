@@ -932,14 +932,18 @@ img {
     height: 50vh;
     padding: 0rem 1rem 1rem 1rem;
     right: -12.5rem;
-    top: 0px;
-    transition: transform 0.5s;
+    top: -1px;
+    transition: transform 0.5s, background-color 0.9s;
   }
 
   .nav.openMenu {
     background-color: #102027;
     transform: translate(-105%);
-    transition: transform 0.5s;
+    transition: transform 0.5s, background-color 0.9s;
+  }
+
+  .nav.light, .nav.openMenu.light {
+
   }
 
   .menu {
