@@ -35,10 +35,9 @@ body, #main, #about, #projects, #repos, #footer {
   z-index: 1;
 }
 
-.navLinks.menu, .navLinks.menu.light {
+.menu{
   display: none;
 }
-
 
 .navLinks {
   align-items: center;
@@ -787,6 +786,8 @@ img {
   button:active,
   button:hover,
   label:focus,
+  div:focus,
+  a:focus,
   .btn:active,
   .btn.active
   {
@@ -926,19 +927,48 @@ img {
         mobile nav styling
   **********************************/
   .nav {
+    background-color: #102027;
+    height: 50vh;
+    padding: 0rem 1rem 1rem 1rem;
+    right: -12.5rem;
     top: 0px;
+    transition: transform 0.5s;
   }
 
-  .navLinks.menu, .navLinks.menu.light{
-    display: flex;
-    background-color: rgba(255, 255, 255, 0);
-    color: #102027;
+  .nav.openMenu {
+    background-color: #102027;
+    transform: translate(-105%);
+    transition: transform 0.5s;
   }
 
-  .navLinks.menu:hover, .navLinks.menu.light:hover{
+  .menu {
     display: flex;
-    background-color: rgba(100,199,200,1);
-    color: rgba(255,255,255,1);
+    position: fixed;
+    top: 1.25rem;
+    right: 0.5rem;
+  }
+
+  .menu.light {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .nav.openMenu .navLinks.menu, .nav.openMenu .navLinks.menu.light {
+    background-color: #102027;
+    color: rgba(255, 255, 255, 1);
+    transition: background-color 0.5s, color 0.5s;
+  }
+
+  .navLinks, .navLinks.light, .navLinks.menu, .navLinks.menu.light {
+    margin: 0;
+    margin-right: 0.5rem;
+  }
+
+  .navLinks:hover, .navLinks.light:hover, .navLinks, .navLinks.light {
+    background-color: inherit;
+    color: rgba(255, 255, 255, 1);
+    animation: none;
+    transition: none;
+    transform: none;
   }
 
   /*********************************
@@ -961,6 +991,7 @@ img {
   .letter {
     min-width: 1rem;
   }
+
   .dot {
     border-radius: 100px;
     width: 1.5rem;
@@ -969,6 +1000,10 @@ img {
     top: 110%;
     left: 50%;
     transition: top 5s, left 8s;
+  }
+
+  #about-me-button {
+
   }
 
   /*********************************

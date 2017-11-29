@@ -1,4 +1,4 @@
-//  select the parent elements
+//  select elements by id or className
 let header = document.querySelector(".header"),
     list = document.querySelector(".list"),
     wrapper = document.querySelector('#wrapper'),
@@ -7,7 +7,21 @@ let header = document.querySelector(".header"),
     image = document.querySelector('.image'),
     mainHeader = document.querySelector('#main_header'),
     repositories = document.querySelector('.repositories'),
+    menu = document.querySelectorAll('.menu_button'),
+    nav = document.querySelector('#nav'),
+    screen_width = document.documentElement.clientWidth,
+    screen_height = document.documentElement.clientHeight,    
+    floatersAmount,
     newHeader = "";
+
+
+// adding event listeners for mobile menu toggle open and close
+for (var i = 0; i < menu.length; i++) {
+  menu[i].addEventListener('click', function() {
+    // console.log("clicked");
+    nav.classList.toggle('openMenu');
+  });
+}
 
 // adding spans around each letter in the header to animate them
 for (var i = 0; i < mainHeader.innerHTML.length; i++) {
@@ -31,7 +45,7 @@ changeNavColor = () => {
   let navLinks =  document.querySelectorAll(".navLinks");
 
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-
+      //adding class to navlinks when scrolled 500px from top
       for (var i = 0; i < navLinks.length; i++) {
 
         if (navLinks[i].className === "navLinks menu") {
@@ -43,8 +57,11 @@ changeNavColor = () => {
           navLinks[i].className = "navLinks light";
         }
       }
-    } else {
 
+      //adding a class to the navbar if the screen is below 500px
+
+    } else {
+      // removing class from navlinks when scroll is less than 500px from the top
       for (var i = 0; i < navLinks.length; i++) {
 
         if (navLinks[i].className === "navLinks menu light" || navLinks[i].className === "navLinks menu") {
@@ -56,6 +73,8 @@ changeNavColor = () => {
           navLinks[i].className = "navLinks";
         }
       }
+
+      // removing a class from the navbar if the screen is below 500px
     }
   };
 window.onscroll = function() {changeNavColor()};
@@ -186,12 +205,11 @@ createRepo = (data, i) => {
   link.appendChild(codeIcon);
 }
 
-// adding floating elements in the background of main section
-let floatersAmount;
-let screen_width = document.documentElement.clientWidth;
-let screen_height = document.documentElement.clientHeight;
-// console.log(screen_height, screen_width);
+// getting the date to use for a later idea
+let date = new Date();
+console.log(date.getMonth() + 1, date.getDate());
 
+// adding floating elements in the background of main section
 if (screen_width <= 500 ) {
   floatersAmount = 25;
 } else if (screen_width <= 800 ) {
@@ -236,10 +254,6 @@ for (var i = 0; i < floatersAmount; i++) {
   cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`
   dot.appendChild(cross);
 }
-
-// getting the date to use for a later idea
-let date = new Date();
-console.log(date.getMonth() + 1, date.getDate());
 
 // getting screen width and height
 // console.log("WINDOW.SCREEN.WIDTH: ",window.screen.width);
