@@ -954,17 +954,15 @@ img {
     font-size: 32px;
   }
 
-  /*.menu.light {
-    color: rgba(255, 255, 255, 0.9);
-  }*/
-
   .nav.openMenu .navLinks.menu, .nav.openMenu .navLinks.menu.light {
     background-color: #102027;
     color: rgba(255, 255, 255, 1);
     transition: background-color 0.5s, color 0.5s;
   }
 
-  .navLinks, .navLinks.light, .navLinks.menu, .navLinks.menu.light {
+  .navLinks, .navLinks.light {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0px;
     margin: 0;
     margin-right: 0.5rem;
   }
@@ -983,6 +981,19 @@ img {
 
   .navLinks:hover .nav-text {
     transform: translate(0%);
+  }
+
+  #menu_button.navLinks.menu_button {
+    border-top: none;
+    justify-content: flex-end;
+    margin: 0rem 1rem 1rem 0rem;
+    width: 100%;
+  }
+
+  #menu_button.navLinks.menu_button i {
+    font-size: 32px;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
   }
 
   /*********************************
