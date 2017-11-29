@@ -35,10 +35,6 @@ body, #main, #about, #projects, #repos, #footer {
   z-index: 1;
 }
 
-.menu{
-  display: none;
-}
-
 .navLinks {
   align-items: center;
   background-color: #102027;
@@ -84,6 +80,9 @@ body, #main, #about, #projects, #repos, #footer {
   transition: transform 1.5s;
 }
 
+.menu, #close_menu {
+  display: none;
+}
 
 /*********************************
        main section styling
@@ -959,7 +958,7 @@ img {
     font-size: 32px;
   }
 
-  .nav.openMenu .navLinks.menu, .nav.openMenu .navLinks.menu.light {
+  .nav.openMenu .navLinks.menu_button, .nav.openMenu .navLinks.menu_button.light {
     background-color: #102027;
     color: rgba(255, 255, 255, 1);
     transition: background-color 0.5s, color 0.5s;
@@ -988,14 +987,15 @@ img {
     transform: translate(0%);
   }
 
-  #menu_button.navLinks.menu_button {
+  #close_menu.navLinks.menu_button {
     border-top: none;
+    display: flex;
     justify-content: flex-end;
     margin: 0rem 1rem 1rem 0rem;
     width: 100%;
   }
 
-  #menu_button.navLinks.menu_button i {
+  #close_menu.navLinks.menu_button i {
     font-size: 32px;
     padding-right: 0.5rem;
     padding-top: 0.5rem;

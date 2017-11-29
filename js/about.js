@@ -21,35 +21,35 @@ for (var i = 0; i < menu.length; i++) {
     // console.log("clicked");
     nav.classList.toggle('openMenu');
   });
-}
+};
 
 // adding spans around each letter in the header to animate them
 for (var i = 0; i < mainHeader.innerHTML.length; i++) {
   newHeader += `<div onmouseover="letterBounce(${i})" class="letter" id="letter${i}" >${mainHeader.innerHTML[i]}</div>`;
-}
+};
 mainHeader.innerHTML = newHeader;
 
 // adding letter animation on mouseover
 letterBounce = (i) => {
-  // console.log(i);
   let letter = document.querySelector(`#letter${i}`);
   letter.setAttribute('class', 'letter hover');
 
   setTimeout(function() {
     letter.setAttribute('class', 'letter');
   }, 600);
-}
+};
 
 // changing the color of the navigation when moved from "main"
 changeNavColor = () => {
 
-    if ((document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) && (screen_width >= 500)){
+    if ((document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) && (screen_width > 500)) {
+      console.log("true");
       //adding class to navlinks when scrolled 500px from top
       for (var i = 0; i < navLinks.length; i++) {
 
-        if (navLinks[i].className === "navLinks menu") {
+        if (navLinks[i].className === "navLinks menu_button") {
 
-          navLinks[i].className = "navLinks menu light"
+          navLinks[i].className = "navLinks menu_button light"
 
         } else if (navLinks[i].className === "navLinks") {
 
@@ -60,13 +60,13 @@ changeNavColor = () => {
       // removing class from navlinks when scroll is less than 500px from the top
       for (var i = 0; i < navLinks.length; i++) {
 
-        if (navLinks[i].className === "navLinks menu light" || navLinks[i].className === "navLinks menu") {
+        if (navLinks[i].className === "navLinks menu_button light" || navLinks[i].className === "navLinks menu_button") {
 
-          navLinks[i].className = "navLinks menu"
+          navLinks[i].className = "navLinks menu_button"
 
-        } else if (navLinks[i].className === "navLinks light") {
+        } else if (navLinks[i].className === "navLinks menu_button light") {
 
-          navLinks[i].className = "navLinks";
+          navLinks[i].className = "navLinks menu_button";
         }
       }
     };
@@ -80,9 +80,9 @@ changeNavColor = () => {
         navLinks[i].style.backgroundColor = 'rgba(255 ,255, 255, 0.0)';
         navLinks[i].style.color = "#102027";
         navLinks[i].style.borderTop = "1px solid #102027";
-      }
+      };
 
-    } else {
+    } else if ((document.body.scrollTop < 650 || document.documentElement.scrollTop < 650) && (screen_width <= 500)) {
       // removing a class from the navbar if the screen is below 500px
       menu[0].style.color = "#102027";
 
@@ -91,9 +91,9 @@ changeNavColor = () => {
         navLinks[i].style.backgroundColor = 'inherit';
         navLinks[i].style.color = "rgba(255, 255, 255, 1)";
         navLinks[i].style.borderTop = "1px solid rgba(255, 255, 255, 0.2)";
-      }
+      };
 
-    }
+    };
 
   };
 window.onscroll = function() {changeNavColor()};
@@ -118,8 +118,8 @@ fetch('https://api.github.com/users/jgordy/repos?sort=created')
         } else if (i <= 10 && !data[i].homepage) {
           createRepo(data, i);
         };
-      }// end of for loop
-    }); // end of the repo fetch
+      };
+    });
 
 // Github api user info request
 fetch('https://api.github.com/users/jgordy')
@@ -136,7 +136,7 @@ function vCardFunction (data) {
     company = `<a class="company hire" href="mailTo:joe.a.gordy@gmail.com" ></a>`;
   } else {
     company = data.company;
-  }
+  };
 
     list.innerHTML = `<li>
                         <span><i class="material-icons">person_pin</i></i></span> ${data.location}
@@ -174,7 +174,7 @@ function vCardFunction (data) {
   image.setAttribute("src", data.avatar_url);
   // let icon = document.getElementById("icon");
   icon.appendChild( image );
-}
+};
 
 // creating list item elements for each repo, from the api data
 createRepo = (data, i) => {
@@ -222,7 +222,7 @@ createRepo = (data, i) => {
   codeIcon.setAttribute('class', 'codeIcon');
   codeIcon.innerHTML = `<i class="material-icons">code</i>`;
   link.appendChild(codeIcon);
-}
+};
 
 // getting the date to use for a later idea
 let date = new Date();
@@ -237,7 +237,7 @@ if (screen_width <= 500 ) {
   floatersAmount = 75;
 } else {
   floatersAmount = 100;
-}
+};
 
 for (var i = 0; i < floatersAmount; i++) {
   let dot = document.createElement('div');
@@ -251,7 +251,7 @@ for (var i = 0; i < floatersAmount; i++) {
     dot.style.left === Math.random() * 100 + "vw";
     dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
     dot.style.transform = `rotate(${Math.random() * 180}deg)`;
-  }
+  };
 
   setTimeout(function() {
     dot.setAttribute('class', 'move');
@@ -265,11 +265,11 @@ for (var i = 0; i < floatersAmount; i++) {
 
   line.setAttribute('class', 'line');
   line.style.transform = "rotate(" + Math.random() * 180 + "deg)";
-  line.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCW`
+  line.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCW`;
   dot.appendChild(line);
 
   cross.setAttribute('class', 'cross');
   cross.style.transform = "rotate(" + Math.random() * 180 + "deg)";
-  cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`
+  cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`;
   dot.appendChild(cross);
-}
+};
