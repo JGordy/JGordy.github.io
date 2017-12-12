@@ -1,24 +1,17 @@
 //  select elements by id or className
-let header = document.querySelector(".header"),
-    list = document.querySelector(".list"),
-    wrapper = document.querySelector('#wrapper'),
-    main = document.querySelector('#main'),
-    contacts = document.querySelector('.contact-list'),
-    image = document.querySelector('.image'),
+let main = document.querySelector('#main'),
     mainHeader = document.querySelector('#main_header'),
-    repositories = document.querySelector('.repositories'),
     menu = document.querySelectorAll('.menu_button'),
     nav = document.querySelector('#nav'),
-    navLinks = document.querySelectorAll('.navLinks'),
     screen_width = document.documentElement.clientWidth,
-    screen_height = document.documentElement.clientHeight,
     floatersAmount,
-    newHeader = "";
+    newHeader = "",
+    date = new Date();
+    // console.log(date.getMonth() + 1, date.getDate());
 
 // adding event listeners for mobile menu toggle open and close
 for (var i = 0; i < menu.length; i++) {
   menu[i].addEventListener('click', function() {
-    // console.log("clicked");
     nav.classList.toggle('openMenu');
   });
 };
@@ -33,6 +26,8 @@ mainHeader.innerHTML = newHeader;
 letterBounce = (i) => {
   let letter = document.querySelector(`#letter${i}`);
   letter.setAttribute('class', 'letter hover');
+  // letter.style.color = `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`;
+  // rgba(100,0,200,)
 
   setTimeout(function() {
     letter.setAttribute('class', 'letter');
@@ -41,9 +36,9 @@ letterBounce = (i) => {
 
 // changing the color of the navigation when moved from "main"
 changeNavColor = () => {
+  let navLinks = document.querySelectorAll('.navLinks');
 
     if ((document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) && (screen_width > 500)) {
-      console.log("true");
       //adding class to navlinks when scrolled 500px from top
       for (var i = 0; i < navLinks.length; i++) {
 
@@ -131,7 +126,9 @@ fetch('https://api.github.com/users/jgordy')
 
 // adding github user data to the DOM
 function vCardFunction (data) {
-  let company;
+  let company,
+      list = document.querySelector(".list"),
+      contacts = document.querySelector('.contact-list');
   if (data.company === null) {
     company = `<a class="company hire" href="mailTo:joe.a.gordy@gmail.com" ></a>`;
   } else {
@@ -148,7 +145,7 @@ function vCardFunction (data) {
                         <span><i class="material-icons">business</i></span> ${company}
                       </li>
                       <li>
-                        <span><i class="fa fa-github" aria-hidden="true"></i></span><a href=${data.html_url} target="_blank">github.com/Jgordy</a>
+                        <span><i class="fab fa-github" aria-hidden="true"></i></span><a href=${data.html_url} target="_blank">github.com/Jgordy</a>
                       </li>
                       <li>
                         <span><i class="fa fa-globe" aria-hidden="true"></i></span><a href=https://${data.blog}>${data.blog}</a>
@@ -160,7 +157,7 @@ function vCardFunction (data) {
       <a href="mailTo:joe.a.gordy@gmail.com">joe.a.gordy@gmail.com</a>
     </li>
     <li>
-      <span><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+      <span><i class="fab fa-linkedin" aria-hidden="true"></i></span>
       <h4>Message me on LinkedIn</h4>
       <a href="https://www.linkedin.com/in/joseph-gordy" target="_blank">LinkedIn.com/joseph-gordy</a>
     </li>
@@ -179,7 +176,9 @@ function vCardFunction (data) {
 // creating list item elements for each repo, from the api data
 createRepo = (data, i) => {
 
-  let eachRepo = document.createElement('div');
+  let repositories = document.querySelector('.repositories'),
+      eachRepo = document.createElement('div');
+
   eachRepo.setAttribute('class', 'eachRepo');
   repositories.appendChild(eachRepo);
 
@@ -224,9 +223,69 @@ createRepo = (data, i) => {
   link.appendChild(codeIcon);
 };
 
-// getting the date to use for a later idea
-let date = new Date();
-console.log(date.getMonth() + 1, date.getDate());
+//function to create the standard background floater
+createFloater = (index) => {
+  let dot = document.createElement('div');
+  let line = document.createElement('div');
+  let cross = document.createElement('div');
+
+  dot.setAttribute('class', 'dot');
+  main.appendChild(dot);
+  if (dot.className === 'dot') {
+    // dot.style.top === Math.random().toFixed(2) * 100 + "vh";
+    // dot.style.left === Math.random().toFixed(2) * 100 + "vw";
+    // dot.style.transition = `top ${Math.random().toFixed(2) * 15}s, left ${Math.random().toFixed(2) * 15}s`;
+    dot.style.transform = `rotate(${Math.random().toFixed(2) * 180}deg)`;
+  };
+
+  setTimeout(function() {
+    dot.setAttribute('class', 'move');
+    if (dot.className === 'move') {
+
+      let randomSpeed = Math.random().toFixed(2) * 15;
+      dot.style.top = Math.random().toFixed(2) * 100 + "vh";
+      dot.style.left = Math.random().toFixed(2) * 100 + "vw";
+      dot.style.transition = `top ${randomSpeed}s, left ${randomSpeed}s`;
+
+    }
+  }, 1500);
+
+  let rotateSpeed = Math.random().toFixed(2) * 150;
+  line.setAttribute('class', 'line');
+  line.style.transform = "rotate(" + Math.random().toFixed(2) * 180 + "deg)";
+  line.style.animation = `${rotateSpeed}s ease-out 0s infinite rotateCW`;
+  dot.appendChild(line);
+
+  cross.setAttribute('class', 'cross');
+  cross.style.transform = "rotate(" + Math.random().toFixed(2) * 180 + "deg)";
+  cross.style.animation = `${rotateSpeed}s ease-out 0s infinite rotateCCW`;
+  dot.appendChild(cross);
+
+  if (index % 5 === 0) {
+
+    line.style.backgroundColor = `rgba(0,0,0,0.9)`;
+    cross.style.backgroundColor = `rgba(0,0,0,0.9)`;
+
+  } else if (index % 9 === 0) {
+
+    line.style.backgroundColor = `rgba(0,0,0,0.1)`;
+    cross.style.backgroundColor = `rgba(0,0,0,0.1)`;
+
+  }
+};
+
+// function to create snow themed background
+snowTheme = () => {
+  let snowflake = document.createElement('div');
+  snowflake.innerHTML = `<i class="fa fa-snowflake-o" aria-hidden="true"></i>`;
+  snowflake.style.position = 'absolute';
+  snowflake.style.top = '0';
+  snowflake.style.left = `${Math.floor(Math.random().toFixed(2) * 100)}vw`;
+  snowflake.style.transform = `scale(${Math.random().toFixed(2) * 1.5})`;
+  snowflake.style.color = 'lightblue';
+
+  main.appendChild(snowflake);
+};
 
 // adding floating elements in the background of main section
 if (screen_width <= 500 ) {
@@ -240,36 +299,13 @@ if (screen_width <= 500 ) {
 };
 
 for (var i = 0; i < floatersAmount; i++) {
-  let dot = document.createElement('div');
-  let line = document.createElement('div');
-  let cross = document.createElement('div');
 
-  dot.setAttribute('class', 'dot');
-  main.appendChild(dot);
-  if (dot.className === 'dot') {
-    dot.style.top === Math.random() * 100 + "vh";
-    dot.style.left === Math.random() * 100 + "vw";
-    dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
-    dot.style.transform = `rotate(${Math.random() * 180}deg)`;
-  };
+  // if (date.getMonth() + 1 === 12) {
+  //   snowTheme()
+  // } else {
+  //   createFloater();
+  // };
 
-  setTimeout(function() {
-    dot.setAttribute('class', 'move');
-    if (dot.className === 'move') {
-      dot.style.top = Math.random() * 100 + "vh";
-      dot.style.left = Math.random() * 100 + "vw";
-      dot.style.transition = `top ${Math.random() * 10}s, left ${Math.random() * 15}s`;
-    }
-  }, 1500);
+  createFloater(i);
 
-
-  line.setAttribute('class', 'line');
-  line.style.transform = "rotate(" + Math.random() * 180 + "deg)";
-  line.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCW`;
-  dot.appendChild(line);
-
-  cross.setAttribute('class', 'cross');
-  cross.style.transform = "rotate(" + Math.random() * 180 + "deg)";
-  cross.style.animation = `${Math.random() * 500 / 2}s ease-out 0s infinite rotateCCW`;
-  dot.appendChild(cross);
 };

@@ -94,12 +94,12 @@ body, #main, #about, #projects, #repos, #footer {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  border: 1px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  z-index: -2;
 }
 
 .header{
@@ -186,20 +186,25 @@ body, #main, #about, #projects, #repos, #footer {
   margin-top: 7rem;
 }
 
-.social-icons i {
+.fa-github {
+  text-shadow: 8px 11px 4px rgba(100, 100, 100, 0.3);
+}
+
+.social-icons a {
   color: #37474f;
   font-size: 2.5rem;
   margin: 0rem 1rem;
-  transition: text-shadow 0.3s;
+  transition: opacity 0.3s, text-shadow 0.3s;
 }
 
 .social-icons .fa-envelope {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
 }
 
-.social-icons i:hover {
+.social-icons a:hover {
+  opacity: 0.6;
   text-shadow: 8px 11px 4px rgba(100, 100, 100, 0.3);
-  transition: text-shadow 0.3s;
+  transition: opacity 0.3s, text-shadow 0.3s;
 }
 
 #about-me-button {
@@ -267,13 +272,21 @@ body, #main, #about, #projects, #repos, #footer {
 }
 
 .line, .cross {
-  background-color: gray;
+  background-color: rgba(0,0,0,0.3);
   height: 0.25rem;
   left: 0;
   opacity: 0.3;
   position: absolute;
   top: 0;
   width: 1.5rem;
+  transition: border-radius 0.5s, opacity 0.5s, background-color 0.5s;
+}
+
+.move:hover .line, .move:hover .cross {
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 5px;
+  opacity: 0.6;
+  transition: border-radius 0.5s, opacity 0.5s, background-color 0.5s;
 }
 
 .line {
@@ -302,6 +315,18 @@ body, #main, #about, #projects, #repos, #footer {
   }
 }
 
+@keyframes colorPulse {
+  0% {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    background-color: rgba(0, 0, 0, 1);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
 /*********************************
       about me page styling
 **********************************/
@@ -321,13 +346,16 @@ body, #main, #about, #projects, #repos, #footer {
 }*/
 
 #content_container {
+  align-items: ;
   border-radius: 15px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
+  justify-content: space-around;
   margin: 0px auto;
-  min-height: 200px;
-  width: 80%;
+  min-height: 100vh;
+  width: 100%;
 }
 
 #icon {
@@ -362,6 +390,7 @@ img {
   display: flex;
   justify-content: space-around;
   padding: 2rem 0rem;
+  margin: 0rem auto;
   width: 90vw;
 }
 
@@ -375,6 +404,8 @@ img {
 }
 
 .basics {
+  display: flex;
+  justify-content: center;
   padding: 20px 0px;
   flex-basis: 100%;
 }
@@ -388,7 +419,6 @@ img {
 
 .list li {
   align-items: center;
-  /*background-color: #4B616C;*/
   color: rgba(255,255,255, 0.8);
   flex: 0 1 15%;
   display: flex;
@@ -402,6 +432,10 @@ img {
 .list li i {
   color: rgba(255,255,255, 0.8);
   font-size: 2rem;
+}
+
+.list li span {
+  font-size: 1.8rem;
 }
 
 .company {
@@ -421,6 +455,7 @@ img {
 .hire:hover:before {
   color: rgba(100, 199, 200, 1);
   content: "Hire me";
+  padding: 0.25rem 1rem;
 }
 
 @keyframes pulse {
@@ -472,10 +507,14 @@ img {
 }
 
 .image-container {
-  flex-basis: 23%;
+  flex-basis: 40%;
   /*margin-bottom: 3rem;*/
   text-align: center;
   position: relative;
+}
+
+.image-container.mobile {
+  flex-basis: 23%;
 }
 
 .image-container .image {
@@ -724,6 +763,10 @@ img {
 
 .contact-list i {
   font-size: 48px;
+}
+
+.contact-list span {
+  font-size: 40px;
 }
 
 .contact-list a{

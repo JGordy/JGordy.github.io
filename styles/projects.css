@@ -1,35 +1,35 @@
-* {
+/** {
   margin: 0;
   margin: 0;
-}
+}*/
 
-body {
+/*body {
   background-color: cadetblue;
   color: aliceblue;
-  /*text-shadow: 2px 2px 2px gray;*/
+  text-shadow: 2px 2px 2px gray;
   font-family: "Roboto", sans-serif;
-}
+}*/
 
-.header {
+/*.header {
   text-align: center;
   text-shadow: none;
   font-family: "Roboto Slab", serif;
   position: relative;
   padding: 8px;
   background: black;
-}
+}*/
 
-.header h1 {
+/*.header h1 {
   color: lightgray;
   font-size: 42px;
   padding: 30px 0px;
   font-family: "Roboto Slab", serif;
   letter-spacing: .5em;
   font-weight: lighter;
-  /*margin: 0;*/
-}
+  margin: 0;
+}*/
 
-.nav {
+/*.nav {
   background-color: black;
   display: flex;
   position: sticky;
@@ -37,19 +37,19 @@ body {
   top: 0;
   justify-content: center;
   padding: 15px 0px;
-}
+}*/
 
-.nav a {
+/*.nav a {
   color: aliceblue;
   margin: 0px 15px;
   text-decoration: none;
-}
+}*/
 
-.nav a:hover {
+/*.nav a:hover {
   border-bottom: 5px solid cadetblue;
   padding-bottom: 10px;
   margin-bottom: -15px;
-}
+}*/
 
 /******* Menu toggle styling **************/
 
@@ -89,7 +89,7 @@ body {
 
 /* End Menu toggle styling */
 
-#image-blur {
+/*#image-blur {
  background-image: url(../images/itunes_search_project.png);
  background-attachment: fixed;
  background-position: center;
@@ -97,9 +97,9 @@ body {
  background-size: cover;
  width: 100%;
  height: 500px;
-}
+}*/
 
-#image-blur2 {
+/*#image-blur2 {
 background-image: url(../images/calculator_project.jpg);
 background-attachment: fixed;
 background-position: center;
@@ -107,9 +107,9 @@ background-repeat: no-repeat;
 background-size: cover;
 width: 100%;
 height: 500px;
-}
+}*/
 
-#image-blur3 {
+/*#image-blur3 {
   background-image: url(../images/bent_creek_ceramics.png);
   background-attachment: fixed;
   background-position: center;
@@ -117,9 +117,9 @@ height: 500px;
   background-size: cover;
   width: 100%;
   height: 500px;
-}
+}*/
 
-#layer1 {
+/*#layer1 {
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
@@ -127,25 +127,25 @@ height: 500px;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-}
+}*/
 
-#layer2 {
+/*#layer2 {
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
-#layer3 {
+/*#layer3 {
   background-color: rgba(255, 255, 255, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+}*/
 
 /*div h2 {
  margin: 40px auto;
@@ -153,75 +153,75 @@ height: 500px;
  font-size: 48px;
 }*/
 
-#layer1 h1, #layer2 h1, #layer3 h1 {
+/*#layer1 h1, #layer2 h1, #layer3 h1 {
   margin: 40px auto;
   color: black;
   font-size: 48px;
   text-align: center;
-}
+}*/
 
-#layer1 h1 a, #layer2 h1 a, #layer3 h1 a {
+/*#layer1 h1 a, #layer2 h1 a, #layer3 h1 a {
   color: black;
   text-decoration: none;
-}
+}*/
 
-#layer1 h1 a:hover, #layer2 h1 a:hover, #layer3 h1 a:hover {
+/*#layer1 h1 a:hover, #layer2 h1 a:hover, #layer3 h1 a:hover {
   border-bottom: 5px solid black;
   border-radius: 5px;
   color: black;
   padding: 5px;
-}
+}*/
 
-.section {
+/*.section {
   font-size: 20px;
   line-height: 1.6em;
   padding: 40px 175px;
   line-height: 2em;
-}
+}*/
 
-.section p {
+/*.section p {
   color: aliceblue;
-}
+}*/
 
-#footer {
+/*#footer {
   background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 75px;
-}
+}*/
 
-#footer a {
+/*#footer a {
   margin: 0px 25px;
-}
+}*/
 
-#linkedin {
+/*#linkedin {
   height: 35px;
-}
+}*/
 
-#linkedin:hover {
+/*#linkedin:hover {
   border-top: 5px solid cadetblue;
   padding-top: 13px;
   margin-top: -18px;
-}
+}*/
 
-#github {
+/*#github {
   height: 35px;
-}
+}*/
 
-#github:hover {
+/*#github:hover {
   border-top: 5px solid cadetblue;
   padding-top: 13px;
   margin-top: -18px;
-}
+}*/
 
-#mailIcon {
+/*#mailIcon {
 width: 50px;
 height: 55px;
-}
+}*/
 
-#mailIcon:hover {
+/*#mailIcon:hover {
 border-top: 5px solid cadetblue;
 padding-top: 3px;
 margin-top: -8px;
-}
+}*/
