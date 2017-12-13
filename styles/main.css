@@ -334,7 +334,7 @@ body, #main, #about, #projects, #repos, #footer {
 .about {
   background-color: #37474f;
   min-height: 100vh;
-  padding: 3rem 0rem;
+  padding: 2rem 0rem;
 }
 
 /*.about h1 {
@@ -367,13 +367,13 @@ img {
   border: 2px solid rgba(255,255,255, 0.7);
   border-radius: 50%;
   width: 250px;
-  margin-top: 35px;
+  margin-top: 5px;
 }
 
 .story {
   flex-basis: 50%;
   margin-left: 40px;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .story p {
@@ -406,7 +406,7 @@ img {
 .basics {
   display: flex;
   justify-content: center;
-  padding: 20px 0px;
+  padding: 0px;
   flex-basis: 100%;
 }
 
@@ -508,7 +508,7 @@ img {
 
 .image-container {
   flex-basis: 40%;
-  /*margin-bottom: 3rem;*/
+  margin-bottom: 3rem;
   text-align: center;
   position: relative;
 }
