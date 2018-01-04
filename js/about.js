@@ -295,7 +295,7 @@ if (screen_width <= 500 ) {
 } else if (screen_width <= 1000 ) {
   floatersAmount = 75;
 } else {
-  floatersAmount = 100;
+  floatersAmount = 80;
 };
 
 for (var i = 0; i < floatersAmount; i++) {
