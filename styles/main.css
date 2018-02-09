@@ -8,7 +8,7 @@ rgba(255,255,255,1) - highlight color
 
 * {
   margin: 0px;
-  padding-left: 0px;
+  padding: 0px;
 }
 
 body {
@@ -95,7 +95,7 @@ body, #main, #about, #projects, #repos, #footer {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -179,7 +179,9 @@ body, #main, #about, #projects, #repos, #footer {
 }
 
 .header h3 {
-  color: #62727b;letter-spacing: 0.1rem;
+  /* color: #62727b; */
+  color: rgba(100,199,200,1);
+  letter-spacing: 0.1rem;
   text-align: center;
 }
 
@@ -225,6 +227,7 @@ body, #main, #about, #projects, #repos, #footer {
 
 #about-me-button a {
   color: #37474f;
+  color: rgba(100,199,200,1);
   font-size: 1.5rem;
   text-decoration: none;
 }
@@ -239,18 +242,20 @@ body, #main, #about, #projects, #repos, #footer {
   0% {
     position: absolute;
     top: 86%;
-    left: 48%;
+    left: 0;
+    right: 0;
     opacity: 1;
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
   100% {
     position: absolute;
     top: 92%;
-    left: 48%;
+    left: 0;
+    right: 0;
     opacity: 0;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
   }
 }
 
@@ -786,12 +791,11 @@ img {
   /*background-color: rgba(100, 199, 200, 0.8);*/
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 2rem;
 }
 
 #top_button a {
   color: rgba(255,255,255, 0.6);
-  padding: 1rem;
   text-align: center;
   text-decoration: none;
   transition: color 0.5s;
@@ -1076,26 +1080,28 @@ img {
     transition: top 5s, left 8s;
   }
 
-  #about-me-button {
-
+  #about-me-button i {
+    font-size: 60px;
   }
 
   @keyframes aboutMeSlider {
     0% {
       position: absolute;
       top: 80%;
-      left: 44%;
+      left: 0;
+      right: 0;
       opacity: 1;
-      -webkit-transform: scale(1.5);
-              transform: scale(1.5);
+      -webkit-transform: scale(1);
+              transform: scale(1);
     }
     100% {
       position: absolute;
       top: 92%;
-      left: 44%;
+      left: 0;
+      right: 0;
       opacity: 0.5;
-      -webkit-transform: scale(1);
-              transform: scale(1);
+      -webkit-transform: scale(0.75);
+              transform: scale(0.75);
     }
   }
 
@@ -1240,7 +1246,7 @@ img {
 
   #top_button {
     bottom: 0.5rem;
-    right: -0.25rem;
+    right: 0.5rem;
   }
 
   #top_button a {

@@ -244,7 +244,7 @@ createFloater = (index) => {
 
       let randomSpeed = Math.random().toFixed(2) * 15;
       dot.style.top = Math.random().toFixed(2) * 100 + "vh";
-      dot.style.left = Math.random().toFixed(2) * 100 + "vw";
+      dot.style.left = Math.random().toFixed(2) * 95 + "vw";
       dot.style.transition = `top ${randomSpeed}s, left ${randomSpeed}s`;
 
     }
