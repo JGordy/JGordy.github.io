@@ -1,4 +1,3 @@
-//  select elements by id or className
 let main = document.querySelector('#main'),
     mainHeader = document.querySelector('#main_header'),
     menu = document.querySelectorAll('.menu_button'),
@@ -16,7 +15,7 @@ for (var i = 0; i < menu.length; i++) {
   });
 };
 
-// adding spans around each letter in the header to animate them
+// adding divs around each letter in the header to animate them
 for (var i = 0; i < mainHeader.innerHTML.length; i++) {
   newHeader += `<div onmouseover="letterBounce(${i})" class="letter" id="letter${i}" >${mainHeader.innerHTML[i]}</div>`;
 };
@@ -101,28 +100,65 @@ $('a').click(function(){
   return false;
 });
 
-// Github api repository request
-fetch('https://api.github.com/users/jgordy/repos?sort=created')
-    .then(results => {
-      return results.json();
-    }).then(data => {
-      for (var i = 0; i < data.length; i++) {
+// Adding projects from data.js
+createProjectHTML = (project) =>{
+  return `<div class="image-container ${project.mobile ? " mobile" : ''}">
+            <a href=${project.href} target="_blank">
+              <img src=${project.imageURL} alt="" class="image ${project.mobile ? 'mobile' : ''}">
+              <div class="overlay">
+                <div class="text">
+                  <div class="views">
+                    <h3>${project.name}</h3>
+                    <div class="view_icons">
+                      ${project.icons.map(icon => {
+                        return `<i class="material-icons">${icon}</i>`;
+                      })}
+                    </div>
+                  </div>
+                  <div class="project_skills">
+                    <div class="skills_list">
+                      ${project.skills.map(skill => {
+                        return `<span>${skill}</span>`;
+                      })}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>`;
+}
 
-        if (data[i].homepage) {
-          createRepo(data, i);
-        } else if (i <= 10 && !data[i].homepage) {
-          createRepo(data, i);
-        };
-      };
-    });
+addProjects = (projects) => {
+  const desktop = document.getElementById('desktop_projects');
+  const mobile = document.getElementById('mobile_projects');
+
+  projects.forEach(project => {
+    if (project.mobile) {
+      mobile.innerHTML += createProjectHTML(project);
+    } else {
+      desktop.innerHTML += createProjectHTML(project);
+    }
+  })
+}
+addProjects(projects);
+
+// Github api repository request
+fetch(repoURL)
+  .then(results =>  results.json())
+  .then(data => {
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].homepage) {
+      createRepo(data, i);
+    } else if (i <= 10 && !data[i].homepage) {
+      createRepo(data, i);
+    };
+  };
+});
 
 // Github api user info request
-fetch('https://api.github.com/users/jgordy')
-  .then(results => {
-    return results.json();
-  }).then(data => {
-    vCardFunction(data);
-  });
+fetch(userURL)
+  .then(results => results.json())
+  .then(data => vCardFunction(data));
 
 // adding github user data to the DOM
 function vCardFunction (data) {
@@ -191,7 +227,6 @@ createRepo = (data, i) => {
   eachRepo.appendChild(link_container);
 
   if (data[i].homepage != null) {
-
     let site = document.createElement('a');
     site.setAttribute('href', `${data[i].homepage}`);
     site.setAttribute('class', 'github');

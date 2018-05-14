@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 
-    <!-- <script src="https://use.fontawesome.com/fe9d6acd6c.js"></script> -->
+    <!-- <script src="https://use.fontawesome.com/fe9d6acd6c.js"> -->
+
+    </script>
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
 
@@ -35,9 +38,6 @@
         <div class="nav-icons">
           <i class="material-icons">close</i>
         </div>
-        <!-- <div class="nav-text">
-          Close Menu
-        </div> -->
       </div>
       <a href="#top" class="navLinks menu_button">
         <div class="nav-icons">
@@ -95,7 +95,6 @@
 
       <div id="about-me-button">
         <a href="#about">
-          <!-- <h4>About me</h4> -->
           <i class="material-icons">expand_more</i>
         </a>
       </div>
@@ -103,12 +102,11 @@
 
     <div class="about" id="about">
       <div class="wrapper" id="wrapper">
-        <!-- <h1>About</h1> -->
         <div id="content_container">
-
 
           <div class="basics">
             <div id="icon">
+              <!-- NOTE this is where the Github profile image is loaded -->
             </div>
 
             <div class="story">
@@ -117,6 +115,7 @@
           </div>
 
           <div class="skills">
+            <!-- TODO create a JS function to handle this. -->
             <span id='skills_header'>Skills </span>
             <span id="react">React/Redux</span>
             <span id="rwd">Responive Web Design</span>
@@ -128,6 +127,7 @@
           </div>
 
           <ul class="list">
+            <!-- NOTE this is where JS is adding the user info w/Icons -->
           </ul>
 
         </div>
@@ -136,201 +136,12 @@
 
     <div class="projects-section" id="projects">
       <h1 id="mobile_header">Mobile Apps / Responsive Sites</h1>
-      <div class="projects">
-
-        <div class="image-container mobile">
-          <a href="https://house-rules.github.io/webpage/" target="_blank">
-            <img src="./images/HR-gameList-screen.png" alt="" class="image mobile">
-            <div class="overlay">
-              <div class="text">
-
-                <div class="views">
-                  <h3>House Rules</h3>
-                  <div class="view_icons">
-                    <i class="material-icons">phone_android</i>
-                  </div>
-                </div>
-                <!-- <div class="project_links">
-                  <div class="see_project">
-                    View <br/> project
-                  </div>
-                  <div class="code_link links">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                  </div>
-                  <div class="site_link links">
-                    <i class="fa fa-globe" aria-hidden="true"></i>
-                  </div>
-                </div> -->
-                <div class="project_skills">
-                  <!-- <h5>Tech Used</h5> -->
-                  <div class="skills_list">
-                    <span>React</span>
-                    <span>Redux</span>
-                    <span>Api Calls</span>
-                    <span>Progressive Web Apps</span>
-                    <span>CSS3 animations</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="image-container mobile">
-          <a href="http://josephgordy.com/wk4_itunes_music_search/" target="_blank">
-            <img src="./images/iTunes-project-rwd.png" alt="" class="image mobile">
-            <div class="overlay">
-              <div class="text">
-                <div class="views">
-                  <h3>Itunes Project</h3>
-                  <div class="view_icons">
-                    <i class="material-icons">phone_android</i>
-                    <i class="material-icons">computer</i>
-                  </div>
-                </div>
-                <div class="project_skills">
-                  <!-- <h5>Tech Used</h5> -->
-                  <div class="skills_list">
-                    <span>Api calls</span>
-                    <span>Javascript</span>
-                    <span>Responsive Web Design</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="image-container mobile">
-          <a href="http://josephgordy.com/week3_calculator_project/" target="_blank">
-            <img src="./images/js-calculator-rwd.png" alt="" class="image mobile">
-            <div class="overlay">
-              <div class="text">
-                <div class="views">
-                  <h3>JS calculator</h3>
-                  <div class="view_icons">
-                    <i class="material-icons">phone_android</i>
-                    <i class="material-icons">computer</i>
-                  </div>
-                </div>
-                <div class="project_skills">
-                  <!-- <h5>Tech Used</h5> -->
-                  <div class="skills_list">
-                    <span>Javascript</span>
-                    <span>HTML/CSS</span>
-                    <span>Responsive Web Design</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
+      <div id="mobile_projects" class="projects">
+        <!-- NOTE JS is adding projects here -->
       </div>
       <h1 id="desktop_header">Desktop Sites</h1>
-      <div class="projects">
-
-
-        <div class="image-container">
-          <a href="https://josephgordy.com/shoppily/" target="_blank">
-            <img src="./images/shoppily-homepage.png" alt="" class="image">
-            <div class="overlay">
-              <div class="text">
-                <div class="views">
-                  <h3>Shoppily</h3>
-                  <div class="view_icons">
-                    <i class="material-icons">computer</i>
-                  </div>
-                </div>
-                <div class="project_skills">
-                  <!-- <h5>Tech Used</h5> -->
-                  <div class="skills_list">
-                    <span>React</span>
-                    <span>CSS animations</span>
-                    <span>Javascript</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="image-container">
-          <a href="#">
-            <img src="./images/jibberjab.png" alt="" class="image">
-            <div class="overlay">
-              <div class="text">
-                <div class="views">
-                  <h3>Jibberjab</h3>
-                  <div class="view_icons">
-                    <i class="material-icons">computer</i>
-                  </div>
-                </div>
-                <div class="project_skills">
-                  <!-- <h5>Tech Used</h5> -->
-                  <div class="skills_list">
-                    <span>Node.js</span>
-                    <span>PostgreSQL</span>
-                    <span>Sequelize</span>
-                    <span>Javascript</span>
-                    <span>HTML/CSS</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="image-container">
-          <a href="https://flipcards-joe-gordy.herokuapp.com" target="_blank">
-            <img src="./images/flipcards.png" alt="" class="image">
-            <div class="overlay">
-              <div class="text">
-                <div class="views">
-                  <h3>Flipcards</h3>
-                  <div class="view_icons">
-                    <i class="material-icons">computer</i>
-                  </div>
-                </div>
-                <div class="project_skills">
-                  <!-- <h5>Tech Used</h5> -->
-                  <div class="skills_list">
-                    <span>Node.js</span>
-                    <span>PostgreSQL</span>
-                    <span>Sequelize</span>
-                    <span>Api</span>
-                    <span>Javascript</span>
-                    <span>HTML/CSS</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="image-container">
-          <a href="http://josephgordy.com/Bent-Creek-Ceramics/" target="_blank">
-            <img src="./images/bent_creek_ceramics.png" alt="" class="image">
-            <div class="overlay">
-              <div class="text">
-                <div class="views">
-                  <h3>Bent Creek Ceramics</h3>
-                  <div class="view_icons">
-                    <i class="material-icons">computer</i>
-                  </div>
-                </div>
-                <div class="project_skills">
-                  <!-- <h5>Tech Used</h5> -->
-                  <div class="skills_list">
-                    <span>HTML/CSS</span>
-                    <span>Javascript</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-
+      <div id="desktop_projects" class="projects">
+        <!-- NOTE JS is adding projects here -->
       </div>
     </div>
 
@@ -338,24 +149,24 @@
       <div id="repo-backer">
         <h1 id="repo_header"><i class="fab fa-github" aria-hidden="true"></i> Recent repositories</h1>
        <div class="repositories" id="repositories">
-
+         <!-- NOTE JS adding the Github repos here -->
        </div>
       </div>
     </div>
 
     <div class="footer" id="footer">
       <ul class="contact-list">
-
+        <!-- NOTE JS adding the footer links here -->
       </ul>
     </div>
 
     <div id="top_button">
       <a href="#top">
         <i class="material-icons">keyboard_arrow_up</i>
-        <!-- <p>Top</p> -->
       </a>
     </div>
 
+    <script src='./js/data.js'></script>
     <script src="./js/about.js"></script>
   </body>
 </html>
