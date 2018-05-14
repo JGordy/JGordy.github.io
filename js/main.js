@@ -161,7 +161,7 @@ fetch(userURL)
   .then(data => vCardFunction(data));
 
 // adding github user data to the DOM
-function vCardFunction (data) {
+vCardFunction = (data) => {
   let company,
       list = document.querySelector(".list"),
       contacts = document.querySelector('.contact-list');
@@ -208,6 +208,23 @@ function vCardFunction (data) {
   // let icon = document.getElementById("icon");
   icon.appendChild( image );
 };
+
+// Adding project company logos below
+createCompanyHTML = logo => {
+  return `<div class="logo">
+            <a href=${logo.href} />
+              <img src="./images/Logo/${logo.imageURL}" />
+            </a>
+          </div>`;
+}
+
+addCompanyLogos = logos => {
+  const companies = document.querySelector('#company-wrapper');
+  logos.forEach(logo => {
+    companies.innerHTML += createCompanyHTML(logo);
+  })
+};
+addCompanyLogos(logos);
 
 // creating list item elements for each repo, from the api data
 createRepo = (data, i) => {

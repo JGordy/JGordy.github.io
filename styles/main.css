@@ -334,7 +334,31 @@ body, #main, #about, #projects, #repos, #footer {
 }
 
 /*********************************
-      about me page styling
+    Company logo section styling
+**********************************/
+
+#company-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 5rem;
+}
+
+#company-wrapper .logo {
+  align-items: center;
+  display: flex;
+  flex-basis: 25%;
+  justify-content: center;
+  text-align: center;
+}
+
+#company-wrapper .logo img {
+  border: none;
+  border-radius: 0px;
+  width: 50%;
+}
+
+/*********************************
+    About me section styling
 **********************************/
 
 .about {
@@ -1075,7 +1099,7 @@ img {
     width: 1.5rem;
     height: 0.5rem;
 
-    top: 110%;
+    top: 120%;
     left: 50%;
     transition: top 5s, left 8s;
   }
@@ -1104,6 +1128,32 @@ img {
               transform: scale(0.75);
     }
   }
+
+  /*********************************
+      Company logo section styling
+  **********************************/
+
+  #company-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  #company-wrapper .logo {
+    align-items: center;
+    display: flex;
+    flex-basis: 25%;
+    justify-content: center;
+    text-align: center;
+    height: 175px;
+  }
+
+  #company-wrapper .logo img {
+    border: none;
+    border-radius: 0px;
+    width: 75%;
+  }
+
 
   /*********************************
         mobile about styling

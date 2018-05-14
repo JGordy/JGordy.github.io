@@ -2,6 +2,22 @@ const repoURL = 'https://api.github.com/users/jgordy/repos?sort=created';
 
 const userURL = 'https://api.github.com/users/jgordy';
 
+const logos = [
+  {
+    imageURL: 'Generosity-Logo.png',
+    href: '#'
+  }, {
+    imageURL: 'weather_channel.png',
+    href: 'https://weloveweather.tv'
+  }, {
+    imageURL: 'kf-mobile-logo.png',
+    href: 'https://http://kontrolfreek.com/'
+  }, {
+    imageURL: 'tsi_corp_logo.png',
+    href: 'https://tsi-corp.com'
+  }
+];
+
 const projects = [
   {
     mobile: true,
