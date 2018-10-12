@@ -101,7 +101,7 @@ $('a').click(function(){
 });
 
 // Adding projects from data.js
-createProjectHTML = (project) =>{
+createProjectHTML = (project) => {
   return `<div class="image-container ${project.mobile ? " mobile" : ''}">
             <a href=${project.href} target="_blank">
               <img src=${project.imageURL} alt="" class="image ${project.mobile ? 'mobile' : ''}">
@@ -144,15 +144,15 @@ addProjects(projects);
 
 // Github api repository request
 fetch(repoURL)
-  .then(results =>  results.json())
+  .then(results => results.json())
   .then(data => {
-  for (var i = 0; i < data.length; i++) {
-    if (data[i].homepage) {
-      createRepo(data, i);
-    } else if (i <= 10 && !data[i].homepage) {
-      createRepo(data, i);
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].homepage) {
+        createRepo(data, i);
+      } else if (i <= 10 && !data[i].homepage) {
+        createRepo(data, i);
+      };
     };
-  };
 });
 
 // Github api user info request
