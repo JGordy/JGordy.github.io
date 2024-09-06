@@ -190,7 +190,7 @@ vCardFunction = (data) => {
             <span><i class="material-icons">person_pin</i></i></span> ${data.location}
         </li>
         <li>
-            <span><i class="material-icons">school</i></span><a href="https://www.theironyard.com/" target="_blank">The Iron Yard</a>
+            <span><i class="material-icons">school</i></span><a href="https://www.coursereport.com/schools/the-iron-yard" target="_blank">The Iron Yard (Closed)</a>
         </li>
         <li>
             <span><i class="material-icons">business</i></span> ${company}
